@@ -1,0 +1,30 @@
+<p>counter works!</p>
+
+<p>{{counter}}</p>
+
+<button (click)="count()">contar</button>
+<button (click)="decrement()">rester</button>
+
+<div *ngIf="counter %2 === 0;else noPar">es par</div>
+
+<ng-template #noPar>
+  <div>es impar</div>
+</ng-template>
+
+
+<button (click)="toggleContent()">mostrar</button>
+
+
+<div *ngIf="toggleContent; else oculto">😀</div>
+<ng-template #oculto> <div>🥲</div> </ng-template>
+
+
+
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'" style="background-color: aquamarine;">Mapa vista</div>
+  <div *ngSwitchCase="'list'" style="background-color: burlywood;"> Lista vista</div>
+  <div *ngSwitchDefault>Vista predeterminada</div>
+</div>
+
+
+<button style="margin-top: 3rem;" (click)="goToUserList()"> go to userList</button>

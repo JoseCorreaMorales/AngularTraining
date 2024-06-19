@@ -3,14 +3,31 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+//import { CounterComponent } from './counter/counter.component';
+//import { PersonsComponent } from './components/persons/persons.component';
+
+import { CounterComponent } from  '../app/components/counter/counter.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { UserCardComponent } from './components/user-card/user-card.component'
+//import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+//import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CounterComponent,
+    UserListComponent,
+    UserCardComponent,
+    //PersonsComponent
+
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    //FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
