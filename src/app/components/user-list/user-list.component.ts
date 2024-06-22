@@ -1,6 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { User } from './user-list.types';
 import { ApiServiceService } from '../../services/api-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -38,13 +39,17 @@ export class UserListComponent implements OnChanges, OnInit {
   }
 
 
-  constructor(private api : ApiServiceService) { }
+  constructor(private api : ApiServiceService, private router: Router) { }
 
   ngOnInit(): void {
     this.api.getUsers().subscribe((data) => {
         this.users = data.map((user: any) => ({name: user.name, email: user.email}))
       })
 
+  }
+
+  goHome(): void {
+    this.router.navigate(["/"])
   }
 
   ngOnChanges(changes: SimpleChanges): void {

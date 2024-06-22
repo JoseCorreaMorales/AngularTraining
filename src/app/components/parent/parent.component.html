@@ -1,0 +1,13 @@
+<section class="grid place-items-center bg-base-200 h-[100vh]">
+  <h2 class="text-[4.5rem]" *ngIf="text; else noText">From: {{text}}</h2>
+
+<ng-template #noText>
+  <h2 class="text-[4.5rem]">From: 🤔</h2>
+</ng-template>
+
+  <div class="flex gap-5">
+    <button (click)="handleClick()" class="btn btn-secondary">Cambiar texto desde el padre</button>
+  <app-child [(text)]="text"></app-child>
+  </div>
+
+</section>

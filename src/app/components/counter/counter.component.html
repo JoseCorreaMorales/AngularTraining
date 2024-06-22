@@ -1,9 +1,7 @@
-<p>counter works!</p>
+<p class="text-[3rem] text-center glass">{{counter}}</p>
 
-<p>{{counter}}</p>
-
-<button (click)="count()">contar</button>
-<button (click)="decrement()">rester</button>
+<button (click)="count()" class="btn">contar</button>
+<button (click)="decrement()" class="btn">rester</button>
 
 <div *ngIf="counter %2 === 0;else noPar">es par</div>
 

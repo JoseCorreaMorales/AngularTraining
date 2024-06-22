@@ -1,15 +1,23 @@
-<div class="p-6 bg-base-200">
-  <h1 class="text-2xl font-bold">Hello, DaisyUI with Angular!</h1>
-  <button class="btn btn-primary mt-4">Click Maaae</button>
-</div>
-<button class="btn">Hello daisyUI</button>
-<p>user-list works!</p>
+<section class="flex justify-center p-8 bg-base-300">
+  <div class="p-6 w-full mt-5">
+    <h1 class="text-2xl font-bold">Hello, DaisyUI with Angular!</h1>
+    <button class="btn btn-primary mt-4" (click)="goHome()">Click Me</button>
+  </div>
+</section>
 
-<div *ngIf="pricipalUser">El usuario principal es  {{pricipalUser}}</div>
+<section class="text-center">
+  <div *ngIf="pricipalUser">
+    <h2 class="text-[1.5rem] m-8">El usuario principal es {{ pricipalUser }}</h2>
+  </div>
+</section>
 
-<div *ngFor="let user of users">
-  <user-card [user]="user" (changePrincipalUser)="changePrincipalUser($event)"></user-card>
-</div>
+<section class="flex flex-wrap justify-center gap-4 mt-5">
+  <div *ngFor="let user of users" class="">
+    <user-card
+      [user]="user"
+      (changePrincipalUser)="changePrincipalUser($event)"
+    ></user-card>
+  </div>
+</section>
 
 <!--  (changePrincipalUser)="changePrincipalUser($event)" -->
-

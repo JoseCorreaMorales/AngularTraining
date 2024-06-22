@@ -11,6 +11,8 @@ import { UserListComponent } from './components/user-list/user-list.component';
 import { UserCardComponent } from './components/user-card/user-card.component'
 //import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ParentComponent } from './components/parent/parent.component';
+import { ChildComponent } from './components/parent/child/child.component';
 //import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -19,6 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     CounterComponent,
     UserListComponent,
     UserCardComponent,
+    ParentComponent,
+    ChildComponent,
     //PersonsComponent
 
 
