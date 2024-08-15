@@ -3,12 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { CounterComponent } from './components/counter/counter.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { ParentComponent } from './components/parent/parent.component';
+import { DirectivesComponent } from './components/directives/directives.component';
+import { ControlsComponent } from './components/controls/controls.component';
 
 
 const routes: Routes = [
     { path: 'counter', component: CounterComponent },
     { path: 'users', component: UserListComponent },
     { path: 'parent', component: ParentComponent },
+    { path: 'directives', component: DirectivesComponent },
+    { path: 'controls', component: ControlsComponent },
 ];
 
 @NgModule({

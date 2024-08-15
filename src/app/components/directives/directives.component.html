@@ -1,0 +1,76 @@
+<section class="grid place-items-center h-screen w-10/12 mx-auto">
+  <div class="mb-8">
+    <p [ngStyle]="{ color: condicion ? 'lightblue' : 'lightgreen' }">
+      NgStyle with inline styles
+    </p>
+    <p [ngStyle]="{ color: condicion ? 'text-green-500' : 'text-yellow-500' }">
+      ngStyle with Tailwind
+    </p>
+    <p [ngClass]="!condicion ? 'text-lime-500' : 'text-emerald-500'">
+      NgClass with Tailwind
+    </p>
+  </div>
+
+  <ng-container>Ng containers are like fragments in React</ng-container>
+  <ng-template>template</ng-template>
+
+  <div class="mt-8">
+    <h2 class="text-[2.2rem]">NgIf under the hood</h2>
+
+    <pre class="prose">
+    <code class="prose">
+      &lt;ng-template [ngIf]="condicion"&gt;
+        Me renderice
+      &lt;/ng-template&gt;
+    </code>
+  </pre>
+  </div>
+
+  <div class="mt-8">
+    <h5>
+      The next approach will render a div for arch item on the numbers list,
+      there is no container here
+    </h5>
+    <div *ngFor="let item of numbers" class="bg-slate-200">
+      <p>{{ item }}</p>
+    </div>
+
+    <h5 class="mt-12">
+      Ng container is usefull when we want to <strong>repeat</strong> each HTML
+      element inside the loop
+    </h5>
+    <ul>
+      <ng-container *ngFor="let item of numbers">
+        <li>{{ item }}</li>
+      </ng-container>
+    </ul>
+
+    <ng-container
+      *ngFor="let item of persons; let i = index; trackBy: trackByPersonById"
+    >
+      <span
+        >item: {{ item.id }} {{ item.name }} <br />
+        i: {{ i }} <br
+      /></span>
+    </ng-container>
+
+    <!-- trackBy va a ayudar para poder idenitificar cada elemeto como unico y si ese
+      elemento cambia entonces angular detectara ese cambio en especifico y no tendara que cambiar
+      toda la lista entera.
+    -->
+
+    <button class="btn btn-secondary" (click)="updateList()">
+      Actualizar lista
+    </button>
+
+    <h2 class="text-[2.2rem] mt-12">
+      We cannot use more than 1 directive for a sigle HTML tag
+    </h2>
+
+    <ol>
+      <ng-container *ngFor="let number of numbers">
+        <li *ngIf="number > 2">{{ number }}</li>
+      </ng-container>
+    </ol>
+  </div>
+</section>

@@ -13,6 +13,11 @@ import { UserCardComponent } from './components/user-card/user-card.component'
 import { HttpClientModule } from '@angular/common/http';
 import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/parent/child/child.component';
+import { DirectivesComponent } from './components/directives/directives.component';
+import { ControlsComponent } from './components/controls/controls.component';
+import { FormControl } from '@angular/forms';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 //import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -23,6 +28,8 @@ import { ChildComponent } from './components/parent/child/child.component';
     UserCardComponent,
     ParentComponent,
     ChildComponent,
+    DirectivesComponent,
+    ControlsComponent,
     //PersonsComponent
 
 
@@ -32,6 +39,14 @@ import { ChildComponent } from './components/parent/child/child.component';
     AppRoutingModule,
     //FormsModule,
     HttpClientModule,
+    // Service Worker for PWA
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
+   // FormData
   ],
   providers: [],
   bootstrap: [AppComponent]
