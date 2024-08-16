@@ -5,9 +5,11 @@ import { UserListComponent } from './components/user-list/user-list.component';
 import { ParentComponent } from './components/parent/parent.component';
 import { DirectivesComponent } from './components/directives/directives.component';
 import { ControlsComponent } from './components/controls/controls.component';
+import { InitialPresentationComponent } from './components/initial-presentation/initial-presentation.component';
 
 
 const routes: Routes = [
+    { path: '', component: InitialPresentationComponent },
     { path: 'counter', component: CounterComponent },
     { path: 'users', component: UserListComponent },
     { path: 'parent', component: ParentComponent },

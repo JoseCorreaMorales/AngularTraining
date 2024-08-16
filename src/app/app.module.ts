@@ -18,6 +18,7 @@ import { ControlsComponent } from './components/controls/controls.component';
 import { FormControl } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { InitialPresentationComponent } from './components/initial-presentation/initial-presentation.component';
 //import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -30,6 +31,7 @@ import { environment } from '../environments/environment';
     ChildComponent,
     DirectivesComponent,
     ControlsComponent,
+    InitialPresentationComponent,
     //PersonsComponent
 
 
