@@ -7,28 +7,32 @@ import { Router } from '@angular/router';
   styleUrls: ['./counter.component.css'],
 })
 export class CounterComponent implements OnInit {
-  counter = 0;
+  counter : number = 0;
 
-  toggle = false;
+  toggleEmoji : boolean = true;
 
-  viewMode = 'list';
+  viewMode : string = 'list';
 
   toggleContent() {
-    this.toggle = !this.toggle;
+    this.toggleEmoji = !this.toggleEmoji;
     this.viewMode = this.viewMode === 'list' ? 'map' : 'list';
   }
 
 
-  count() {
+  count() : void {
     this.counter++;
   }
 
-  decrement() {
+  count2 = () : void =>  {
+     this.counter++;
+  }
+
+  decrement() : void {
     this.counter--;
   }
 
 
-  goToUserList() {
+  goToUserList() : void {
     this.router.navigate(['/users'])
   }
 

@@ -1,28 +1,50 @@
-<p class="text-[3rem] text-center glass">{{counter}}</p>
+<main class="w-11/12 mx-auto my-12">
+  <h1 class="text-3xl font-bold text-center mb-4">Couter App</h1>
+  <p class="text-[3rem] text-center glass p-8 my-3">{{ counter }}</p>
 
-<button (click)="count()" class="btn">contar</button>
-<button (click)="decrement()" class="btn">rester</button>
+  <div class="flex justify-evenly mb-5">
+    <button (click)="count()" class="btn">Add</button>
+    <button (click)="decrement()" class="btn">Decrement</button>
+  </div>
 
-<div *ngIf="counter %2 === 0;else noPar">es par</div>
+  <div class="mockup-code">
+    <pre data-prefix="$"><code>The number is...</code></pre>
+    <pre
+      *ngIf="counter % 2 === 0; else noPar"
+      data-prefix=">"
+      class="text-warning"
+    >
+    <code>Even.</code>
+  </pre
+    >
 
-<ng-template #noPar>
-  <div>es impar</div>
-</ng-template>
+    <ng-template #noPar>
+      <pre data-prefix=">" class="text-success">
+        <code>Odd!</code>
+       </pre
+      >
+    </ng-template>
+  </div>
 
+  <button class="btn btn-active btn-primary my-5" (click)="toggleContent()">
+    Change mode
+  </button>
 
-<button (click)="toggleContent()">mostrar</button>
+  <div *ngIf="toggleEmoji; else oculto">
+    😀
+  </div>
 
+  <ng-template #oculto>
+    <div>🥲</div>
+  </ng-template>
 
-<div *ngIf="toggleContent; else oculto">😀</div>
-<ng-template #oculto> <div>🥲</div> </ng-template>
+  <div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'" class="bg-primary rounded p-4">Map mode</div>
+    <div *ngSwitchCase="'list'" class="bg-secondary rounded p-4">List Mode</div>
+    <div *ngSwitchDefault>Vista predeterminada</div>
+  </div>
 
-
-
-<div [ngSwitch]="viewMode">
-  <div *ngSwitchCase="'map'" style="background-color: aquamarine;">Mapa vista</div>
-  <div *ngSwitchCase="'list'" style="background-color: burlywood;"> Lista vista</div>
-  <div *ngSwitchDefault>Vista predeterminada</div>
-</div>
-
-
-<button style="margin-top: 3rem;" (click)="goToUserList()"> go to userList</button>
+  <button class="btn btn-outline btn-accent my-5" (click)="goToUserList()">
+    Next example
+  </button>
+</main>
