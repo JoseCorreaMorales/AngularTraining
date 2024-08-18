@@ -1,76 +1,201 @@
-<section class="grid place-items-center h-screen w-10/12 mx-auto">
-  <div class="mb-8">
-    <p [ngStyle]="{ color: condicion ? 'lightblue' : 'lightgreen' }">
-      NgStyle with inline styles
-    </p>
-    <p [ngStyle]="{ color: condicion ? 'text-green-500' : 'text-yellow-500' }">
-      ngStyle with Tailwind
-    </p>
-    <p [ngClass]="!condicion ? 'text-lime-500' : 'text-emerald-500'">
-      NgClass with Tailwind
-    </p>
-  </div>
+<main class="grid place-items-center h-screen w-screen mx-auto">
+  <section class="flex justify-center w-full p-8 mb-6 bg-base-300">
+    <div class="p-6 w-full mt-5">
+      <h1 class="text-2xl font-bold">Directives</h1>
+      <button class="btn btn-primary mt-4" routerLink="/">Go Home</button>
+    </div>
+  </section>
 
-  <ng-container>Ng containers are like fragments in React</ng-container>
-  <ng-template>template</ng-template>
+  <div class="w-11/12 mx-auto">
+    <h2 class="text-3xl font-semibold mb-5">Attribute directives [ ]</h2>
+    <span class="my-8">
+      Angular are used to modify the behavior or appearance of the elements they
+      are applied to. Unlike structural directives (which change the DOM layout
+      by adding or removing elements), attribute directives only affect the
+      element they are attached to by altering its
+      <strong>properties or styles</strong>.</span>
 
-  <div class="mt-8">
-    <h2 class="text-[2.2rem]">NgIf under the hood</h2>
+    <div class="flex justify-between items-center flex-wrap mb-6">
+      <span class="block font-semibold text-lg" [ngStyle]="{ color: condicion ? 'lightblue' : 'lightgreen' }">
+        NgStyle with inline styles
+      </span>
 
-    <pre class="prose">
-    <code class="prose">
-      &lt;ng-template [ngIf]="condicion"&gt;
-        Me renderice
-      &lt;/ng-template&gt;
-    </code>
-  </pre>
-  </div>
-
-  <div class="mt-8">
-    <h5>
-      The next approach will render a div for arch item on the numbers list,
-      there is no container here
-    </h5>
-    <div *ngFor="let item of numbers" class="bg-slate-200">
-      <p>{{ item }}</p>
+      <div>
+        <code class="prose block bg-base-200 p-4 rounded">
+          [ngStyle]="{{ "{" }} color: condicion ? 'lightblue' : 'lightgreen'
+          {{ "}" }}"
+        </code>
+      </div>
     </div>
 
-    <h5 class="mt-12">
-      Ng container is usefull when we want to <strong>repeat</strong> each HTML
-      element inside the loop
-    </h5>
-    <ul>
-      <ng-container *ngFor="let item of numbers">
-        <li>{{ item }}</li>
+    <div class="flex justify-between items-center flex-wrap mb-6">
+      <span [ngStyle]="{ color: condicion ? 'text-green-500' : 'text-yellow-500' }">
+        ngStyle with Tailwind
+      </span>
+
+      <div>
+        <code class="prose block bg-base-200 p-4 rounded">
+          [ngStyle]="&#123; color: condicion ? 'text-green-500' :
+          'text-yellow-500' &#125;"
+        </code>
+      </div>
+    </div>
+
+    <div class="flex justify-between items-center flex-wrap mb-6">
+      <span [ngClass]="!condicion ? 'text-lime-500' : 'text-emerald-500'">
+        NgClass with Tailwind
+      </span>
+
+      <div>
+        <code class="prose block bg-base-200 p-4 rounded">
+          [ngClass]="!condicion ? 'text-lime-500' : 'text-emerald-500'"
+        </code>
+      </div>
+    </div>
+
+    <h2 class="text-3xl font-semibold mb-6">Ng-container and ng-template</h2>
+    <span class="block my-8">
+      ng-container renders its content but without any additional wrapper
+      element, whereas ng-template does not render its content immediately; it's
+      a placeholder for content that can be rendered elsewhere or conditionally
+    </span>
+
+    <div class="flex w-full flex-col lg:flex-row">
+      <div class="rounded-box grid flex-grow place-items-center">
+        <div class="mockup-code bg-primary text-primary-content">
+          <pre data-prefix="$">
+            <code class="p-5">
+  &lt;ng-container&gt;
+    Ill will not render as a tag instead i'll
+    render just as a content,
+    i cannot have any styles.
+  &lt;/ng-container&gt;
+          </code>
+        </pre>
+        </div>
+      </div>
+      <div class="divider lg:divider-horizontal">kind of</div>
+      <div class="rounded-box grid flex-grow place-items-center">
+        <div class="mockup-code bg-secondary text-secondary-content">
+          <pre data-prefix="$">
+            <code>
+  &lt;&gt;
+    Im also a way to group a list of children
+    elements without adding extra nodes to the DOM
+  &lt;&sol;&gt;
+          </code>
+        </pre>
+        </div>
+      </div>
+    </div>
+
+    <span class="block my-10">Use ng-container when you need to group elements without adding extra
+      elements to the DOM. Use ng-template when you need to define content that
+      should be rendered conditionally or reused in multiple places in the
+      application.</span>
+
+    <div class="flex w-full flex-col lg:flex-row">
+      <div class="rounded-box grid flex-grow place-items-center">
+        <div class="mockup-code bg-primary text-primary-content">
+          <pre data-prefix="$">
+            <code class="p-5">
+  &#123;
+    isLoggedIn ? &lt;MyComponent />
+    :
+    &lt;p>Please Log in&lt;/p&gt;
+  &#125;
+          </code>
+        </pre>
+        </div>
+      </div>
+      <div class="divider lg:divider-horizontal">kind of</div>
+      <div class="rounded-box grid flex-grow place-items-center">
+        <div class="mockup-code bg-secondary text-secondary-content">
+          <pre data-prefix="$">
+            <code>
+  &lt;div *ngIf="number %2 == 0; else odd"&gt;
+  Even
+  &lt;/div&gt;
+  &lt;ng-template #odd&gt;
+      Odd
+  &lt;/ng-template&gt;
+          </code>
+        </pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <h2 class="text-3xl font-semibold mb-6">Ng-if under the hood</h2>
+      <span class="my-6">Angular handles ngIf in a more sophisticated way than just adding or
+        removing elements from the DOM. Internally, when using ngIf, Angular
+        works with ng-template and ViewContainerRef</span>
+
+      <code class="prose block bg-base-200 p-4 rounded">
+        &lt;ng-template [ngIf]="condicion"&gt; <br>
+        Me renderice <br>
+        &lt;/ng-template&gt;
+      </code>
+    </div>
+
+    <h2 class="text-3xl font-semibold my-6">Ng-For</h2>
+      <h5>
+        The next approach will render a div for arch item on the numbers list,
+        there is no container here
+      </h5>
+      <div class="bg-primary my-4" *ngFor="let item of numbers">
+        <p>{{ item }}</p>
+      </div>
+
+      <h5 class="mt-12">
+        Ng container is usefull when we want to <strong>repeat</strong> each
+        HTML element inside the loop
+      </h5>
+      <ul>
+        <ng-container *ngFor="let item of numbers">
+          <p class="bg-secondary mb-4">{{ item }}</p>
+        </ng-container>
+      </ul>
+
+      <span class="my-8 block">
+        <strong>trackBy</strong> will help to identify each element as unique
+        and if that element changes then Angular will detect that specific
+        change and will not have to change the entire list.
+      </span>
+
+      <ng-container *ngFor="let item of persons; let i = index; trackBy: trackByPersonById">
+        <span class="my-8"><strong> <strong> i:</strong> {{ i }} item: </strong>{{ item.name
+          }}<br>
+        </span>
       </ng-container>
-    </ul>
 
-    <ng-container
-      *ngFor="let item of persons; let i = index; trackBy: trackByPersonById"
-    >
-      <span
-        >item: {{ item.id }} {{ item.name }} <br />
-        i: {{ i }} <br
-      /></span>
-    </ng-container>
+      <button class="btn btn-secondary block btn-wide mx-auto" (click)="updateList()">
+        Update list
+      </button>
 
-    <!-- trackBy va a ayudar para poder idenitificar cada elemeto como unico y si ese
-      elemento cambia entonces angular detectara ese cambio en especifico y no tendara que cambiar
-      toda la lista entera.
-    -->
+      <h2 class="text-2xl font-semibold my-6 space-heading"> We cannot use more than 1 directive for a sigle HTML tag</h2>
 
-    <button class="btn btn-secondary" (click)="updateList()">
-      Actualizar lista
-    </button>
+      <div class="mockup-code mb-8">
+        <pre class="bg-success text-success-content" data-prefix="1">
 
-    <h2 class="text-[2.2rem] mt-12">
-      We cannot use more than 1 directive for a sigle HTML tag
-    </h2>
+          <code>
+            <strong>Correct way ✅</strong>
+            &lt;ng-container *ngIf=&quot;show&quot;&gt;
+             &lt;div *ngFor=&quot;let item of items&quot;&gt;
+              &#123; &#123; item &#125;&#125;
+             &lt;/div&gt;
+            &lt;/ng-container&gt;
+          </code>
+        </pre>
+        <pre class="bg-warning text-warning-content" data-prefix="2">
+          <code>
+            <strong>Wrong way ❌</strong>
+            &lt;div *ngIf="show" *ngFor="let item of items"&gt;
+            &#123; &#123; item &#125;&#125;
+            &lt;/div&gt;
+        </code>
+        </pre>
+      </div>
 
-    <ol>
-      <ng-container *ngFor="let number of numbers">
-        <li *ngIf="number > 2">{{ number }}</li>
-      </ng-container>
-    </ol>
   </div>
-</section>
+</main>

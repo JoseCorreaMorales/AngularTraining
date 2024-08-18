@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
 
 ::-webkit-scrollbar {
   background: white;
@@ -20,4 +23,8 @@
 
 ::-webkit-scrollbar {
   height: 1px;
+}
+
+::selection {
+  background-color: #80808065;
 }

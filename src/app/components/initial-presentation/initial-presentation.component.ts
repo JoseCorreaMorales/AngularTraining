@@ -12,4 +12,12 @@ export class InitialPresentationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  scrollContent = () : void => {
+    const element = document.getElementById('counter')
+    if (element) {
+      element.scrollIntoView({behavior: 'smooth'})
+    }
+
+  }
+
 }

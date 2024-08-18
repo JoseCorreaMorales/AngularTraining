@@ -9,7 +9,7 @@
       <p class="py-6 mr-5">
         Application to centralize all essentials topics of Angular Framework
       </p>
-      <button class="btn btn-primary">Get Started</button>
+      <button class="btn btn-primary" (click)="scrollContent()">Get Started</button>
     </div>
   </div>
 </div>
@@ -17,7 +17,7 @@
 <div class="divider divider-neutral"><strong>Basics</strong></div>
 
 <main class="w-[90%] mx-auto my-12">
-  <article class="flex gap-8 items-center cursor-pointer flex-wrap mb-14">
+  <article class="flex gap-8 items-center cursor-pointer flex-wrap mb-14" id="counter">
     <div class="w-16">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -40,13 +40,119 @@
         The typical counter applications from react made in angular to learn the most basic concepts.
       </p>
       <div class="flex gap-5">
-        <div class="badge badge-primary">Conditional rendering</div>
-      <div class="badge badge-secondary">Data bindling</div>
-      <div class="badge badge-accent">ng-template/container</div>
+      <div class="badge badge-primary text-center [@media(max-width:500px)]:h-12">Conditional rendering</div>
+      <div class="badge badge-secondary text-center [@media(max-width:500px)]:h-12">Data bindling</div>
+      <div class="badge badge-accent text-center [@media(max-width:500px)]:h-12">ng-template/container</div>
+      </div>
+    </div>
+  </article>
+  <!--  -->
+  <div class="divider divider-start pb-6">Banana box</div>
+
+
+  <article class="flex gap-8 items-center cursor-pointer flex-wrap mb-14">
+    <div class="w-16">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="1.5"
+        stroke="currentColor"
+        className="h-4 w-4"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z"
+        />
+      </svg>
+    </div>
+    <a routerLink="banana-box"><h1 class="font-bold text-xl hover:underline">Banana Box</h1></a>
+    <div class="flex flex-col gap-8">
+      <p class="">
+        Example of the concept know as 'Banana box' 🍌📦.
+      </p>
+      <div class="flex gap-5">
+        <div class="badge badge-primary">&#64;Input</div>
+      <div class="badge badge-secondary">&#64;Output</div>
+      <div class="badge badge-accent">Two way binding</div>
       </div>
     </div>
   </article>
 
-  <div class="divider divider-start">Inputs and Outputs</div>
+
+  <div class="divider divider-start pb-6">Parent-Child and Child-Parent Comunication</div>
+
+  <article class="flex gap-8 items-center cursor-pointer flex-wrap mb-14">
+    <div class="w-16">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="1.5"
+        stroke="currentColor"
+        className="h-4 w-4"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z"
+        />
+      </svg>
+    </div>
+    <a routerLink="users"><h1 class="font-bold text-xl hover:underline">User Cards</h1></a>
+    <div class="flex flex-col gap-8">
+      <p class="">
+        Example of the the &#64;Input and &#64;Output components comunication.
+      </p>
+      <div class="flex gap-5">
+        <div class="badge badge-primary">&#64;Input</div>
+      <div class="badge badge-ghost ">&#64;Output</div>
+      <div class="badge badge-accent">API req</div>
+      </div>
+    </div>
+  </article>
+
+
+
+  <div class="divider divider-start pb-6">Directives</div>
+
+  <article class="flex gap-8 items-center cursor-pointer flex-wrap mb-14">
+    <div class="w-16">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="1.5"
+        stroke="currentColor"
+        className="h-4 w-4"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z"
+        />
+      </svg>
+    </div>
+    <a routerLink="directives"><h1 class="font-bold text-xl hover:underline">Directives</h1></a>
+    <div class="flex flex-col gap-8">
+      <p class="">
+        In Angular, exist two types of directives: <strong>Attribute</strong> and <strong>Structural</strong> directives.
+      </p>
+      <ul>
+        <li>The attribute directives are surrounded by <b>[ ]</b></li>
+        <li>The structural directives start with <b>*</b></li>
+      </ul>
+
+      <div class="flex gap-5">
+        <div class="badge badge-primary">trackBy</div>
+      <div class="badge badge-success">ng-templates</div>
+      <div class="badge badge-info">ng-stye</div>
+      <div class="badge badge-accent">ngFor</div>
+      </div>
+    </div>
+  </article>
+
+
 
 </main>

@@ -12,7 +12,7 @@ const routes: Routes = [
     { path: '', component: InitialPresentationComponent },
     { path: 'counter', component: CounterComponent },
     { path: 'users', component: UserListComponent },
-    { path: 'parent', component: ParentComponent },
+    { path: 'banana-box', component: ParentComponent },
     { path: 'directives', component: DirectivesComponent },
     { path: 'controls', component: ControlsComponent },
 ];

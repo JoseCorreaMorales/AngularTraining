@@ -1,17 +1,18 @@
 <section class="flex justify-center p-8 bg-base-300">
   <div class="p-6 w-full mt-5">
     <h1 class="text-2xl font-bold">Hello, DaisyUI with Angular!</h1>
-    <button class="btn btn-primary mt-4" (click)="goHome()">Click Me</button>
+    <p>Comunicate the parent component (list) with the child component (cards) using jsonplaceholder API.</p>
+    <button class="btn btn-primary mt-4" (click)="goHome()">Go Home</button>
   </div>
 </section>
 
 <section class="text-center">
   <div *ngIf="pricipalUser">
-    <h2 class="text-[1.5rem] m-8">El usuario principal es {{ pricipalUser }}</h2>
+    <h2 class="text-[1.5rem] m-8">Principal User is: {{ pricipalUser }}</h2>
   </div>
 </section>
 
-<section class="flex flex-wrap justify-center gap-4 mt-5">
+<section class="flex flex-wrap justify-center gap-4 my-8">
   <div *ngFor="let user of users" class="">
     <user-card
       [user]="user"
@@ -19,5 +20,3 @@
     ></user-card>
   </div>
 </section>
-
-<!--  (changePrincipalUser)="changePrincipalUser($event)" -->
