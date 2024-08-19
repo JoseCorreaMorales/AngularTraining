@@ -1,0 +1,28 @@
+<div class="navbar bg-opacity-10 px-5 rounded-xl">
+  <div class="flex-1">
+    <a class="btn btn-ghost normal-case text-xl">Angular Training</a>
+  </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal px-1">
+      <li tabindex="0">
+        <a>
+          Default
+          <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+        </a>
+        <ul class="p-2 bg-base-100">
+          <li *ngFor="let theme of themes">
+            <a (click)="changeTheme(theme)">{{ theme }}</a>
+          </li>
+        </ul>
+      </li>
+      <li class="flex items-center">
+        <input
+  type="checkbox"
+  value="synthwave"
+  (change)="toggleTheme($event)"
+  class="toggle theme-controller col-span-2 col-start-1 row-start-1 border-sky-400 bg-amber-300 [--tglbg:theme(colors.sky.500)] checked:border-blue-800 checked:bg-blue-300 checked:[--tglbg:theme(colors.blue.900)]" />
+
+      </li>
+    </ul>
+  </div>
+</div>

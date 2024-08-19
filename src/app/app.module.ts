@@ -20,6 +20,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { InitialPresentationComponent } from './components/initial-presentation/initial-presentation.component';
 import { MyOwnDirectiveDirective } from './components/directives/my-own-directive.directive';
+import { NavbarComponent } from './components/navbar/navbar.component';
 //import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -34,6 +35,7 @@ import { MyOwnDirectiveDirective } from './components/directives/my-own-directiv
     ControlsComponent,
     InitialPresentationComponent,
     MyOwnDirectiveDirective,
+    NavbarComponent,
     //PersonsComponent
 
 
