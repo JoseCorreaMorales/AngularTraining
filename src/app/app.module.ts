@@ -19,6 +19,7 @@ import { FormControl } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { InitialPresentationComponent } from './components/initial-presentation/initial-presentation.component';
+import { MyOwnDirectiveDirective } from './components/directives/my-own-directive.directive';
 //import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -32,6 +33,7 @@ import { InitialPresentationComponent } from './components/initial-presentation/
     DirectivesComponent,
     ControlsComponent,
     InitialPresentationComponent,
+    MyOwnDirectiveDirective,
     //PersonsComponent
 
 

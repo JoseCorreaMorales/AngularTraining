@@ -1,1 +1,7 @@
 
+p, h2, a, li, .badge {
+  font-size: 1.3rem;
+}
+.badge {
+  min-height: 2.3rem;
+}

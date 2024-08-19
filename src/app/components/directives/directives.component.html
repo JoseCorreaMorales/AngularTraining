@@ -1,14 +1,14 @@
-<main class="grid place-items-center h-screen w-screen mx-auto">
+<main class="grid place-items-center w-full mx-auto">
   <section class="flex justify-center w-full p-8 mb-6 bg-base-300">
     <div class="p-6 w-full mt-5">
-      <h1 class="text-2xl font-bold">Directives</h1>
+      <h1 class="text-3xl font-bold">Directives</h1>
       <button class="btn btn-primary mt-4" routerLink="/">Go Home</button>
     </div>
   </section>
 
-  <div class="w-11/12 mx-auto">
+  <div class="w-10/12 mx-auto ">
     <h2 class="text-3xl font-semibold mb-5">Attribute directives [ ]</h2>
-    <span class="my-8">
+    <span class="my-8 block">
       Angular are used to modify the behavior or appearance of the elements they
       are applied to. Unlike structural directives (which change the DOM layout
       by adding or removing elements), attribute directives only affect the
@@ -16,7 +16,7 @@
       <strong>properties or styles</strong>.</span>
 
     <div class="flex justify-between items-center flex-wrap mb-6">
-      <span class="block font-semibold text-lg" [ngStyle]="{ color: condicion ? 'lightblue' : 'lightgreen' }">
+      <span class="block font-semibold text-xl" [ngStyle]="{ color: condicion ? 'lightblue' : 'lightgreen' }">
         NgStyle with inline styles
       </span>
 
@@ -29,7 +29,7 @@
     </div>
 
     <div class="flex justify-between items-center flex-wrap mb-6">
-      <span [ngStyle]="{ color: condicion ? 'text-green-500' : 'text-yellow-500' }">
+      <span class="font-semibold text-xl" [ngStyle]="{ color: condicion ? 'text-green-500' : 'text-yellow-500' }">
         ngStyle with Tailwind
       </span>
 
@@ -42,7 +42,7 @@
     </div>
 
     <div class="flex justify-between items-center flex-wrap mb-6">
-      <span [ngClass]="!condicion ? 'text-lime-500' : 'text-emerald-500'">
+      <span class="font-semibold text-xl" [ngClass]="!condicion ? 'text-lime-500' : 'text-emerald-500'">
         NgClass with Tailwind
       </span>
 
@@ -96,7 +96,7 @@
 
     <div class="flex w-full flex-col lg:flex-row">
       <div class="rounded-box grid flex-grow place-items-center">
-        <div class="mockup-code bg-primary text-primary-content">
+        <div class="mockup-code bg-primary text-primary-content  w-full mr-8">
           <pre data-prefix="$">
             <code class="p-5">
   &#123;
@@ -108,9 +108,9 @@
         </pre>
         </div>
       </div>
-      <div class="divider lg:divider-horizontal">kind of</div>
+      <div class="divider lg:divider-horizontal mx-5">kind of</div>
       <div class="rounded-box grid flex-grow place-items-center">
-        <div class="mockup-code bg-secondary text-secondary-content">
+        <div class="mockup-code bg-secondary text-secondary-content w-full ml-8">
           <pre data-prefix="$">
             <code>
   &lt;div *ngIf="number %2 == 0; else odd"&gt;
@@ -127,7 +127,7 @@
 
     <div class="mt-8">
       <h2 class="text-3xl font-semibold mb-6">Ng-if under the hood</h2>
-      <span class="my-6">Angular handles ngIf in a more sophisticated way than just adding or
+      <span class="my-6 block">Angular handles ngIf in a more sophisticated way than just adding or
         removing elements from the DOM. Internally, when using ngIf, Angular
         works with ng-template and ViewContainerRef</span>
 
@@ -139,18 +139,18 @@
     </div>
 
     <h2 class="text-3xl font-semibold my-6">Ng-For</h2>
-      <h5>
+      <span class="my-8 block">
         The next approach will render a div for arch item on the numbers list,
         there is no container here
-      </h5>
+      </span>
       <div class="bg-primary my-4" *ngFor="let item of numbers">
         <p>{{ item }}</p>
       </div>
 
-      <h5 class="mt-12">
+      <span class="my-5 block">
         Ng container is usefull when we want to <strong>repeat</strong> each
         HTML element inside the loop
-      </h5>
+      </span>
       <ul>
         <ng-container *ngFor="let item of numbers">
           <p class="bg-secondary mb-4">{{ item }}</p>
@@ -195,6 +195,21 @@
             &lt;/div&gt;
         </code>
         </pre>
+      </div>
+
+
+      <h2 class="text-3xl font-semibold my-6 space-heading">Creating our own directive</h2>
+      <span class="block my-4">Angular allow to create personalized directives using HostBinding and HostListener</span>
+      <div class="flex w-full mb-12 flex-wrap gap-6">
+        <div my-directive [changeOnLeave]="true"  class="truncate bg-base-300 rounded-box grid h-35 p-5 flex-grow place-items-center gap-4">
+          <p>&#64;HostBinding()</p>
+          Linking properties, attributes and styles.
+        </div>
+        <div class="divider divider-horizontal [@media(max-width:1000px)]:hidden">And</div>
+        <div  my-directive [changeOnLeave]="true" class=" truncate bg-base-300 rounded-box grid h-35 p-5 flex-grow place-items-center gap-4">
+          <p>&#64;HostListening()</p>
+          Linking events.
+        </div>
       </div>
 
   </div>

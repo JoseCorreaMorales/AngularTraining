@@ -10,9 +10,9 @@ module.exports = {
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
     themes: [
+      'cupcake',
       'pastel',
       'retro', // first one will be the default theme
-      'cupcake',
     ],
   },
 }
