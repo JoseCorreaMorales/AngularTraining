@@ -9,7 +9,10 @@ interface Person  {
   selector: 'app-directives',
   templateUrl: './directives.component.html',
   styleUrls: ['./directives.component.css'],
-  styles: [
+
+})
+/*
+styles: [
     `
     p {
       font-size: 2.2rem;
@@ -17,7 +20,7 @@ interface Person  {
     }
     `
   ]
-})
+*/
 export class DirectivesComponent implements OnInit {
   condicion: boolean = true
    numbers : Array<any> = [1, 2, 3, 4, 5, 6]

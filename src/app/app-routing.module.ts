@@ -6,6 +6,7 @@ import { ParentComponent } from './components/parent/parent.component';
 import { DirectivesComponent } from './components/directives/directives.component';
 import { ControlsComponent } from './components/controls/controls.component';
 import { InitialPresentationComponent } from './components/initial-presentation/initial-presentation.component';
+import { RoutingComponent } from './components/routing/routing.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
     { path: 'banana-box', component: ParentComponent },
     { path: 'directives', component: DirectivesComponent },
     { path: 'controls', component: ControlsComponent },
+    { path: 'routing/:helloAngular', component: RoutingComponent },
 ];
 
 @NgModule({

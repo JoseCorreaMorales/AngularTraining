@@ -6,64 +6,80 @@
     </div>
   </section>
 
-  <div class="w-10/12 mx-auto ">
-    <h2 class="text-3xl font-semibold mb-5">Attribute directives [ ]</h2>
-    <span class="my-8 block">
-      Angular are used to modify the behavior or appearance of the elements they
-      are applied to. Unlike structural directives (which change the DOM layout
-      by adding or removing elements), attribute directives only affect the
-      element they are attached to by altering its
-      <strong>properties or styles</strong>.</span>
+  <div class="w-10/12 mx-auto">
+    <section>
+      <h2 class="text-3xl font-semibold mb-5">Attribute directives [ ]</h2>
+      <p>
+        Angular are used to modify the behavior or appearance of the elements
+        they are applied to. Unlike structural directives (which change the DOM
+        layout by adding or removing elements), attribute directives only affect
+        the element they are attached to by altering its
+        <strong>properties or styles</strong>.
+      </p>
 
-    <div class="flex justify-between items-center flex-wrap mb-6">
-      <span class="block font-semibold text-xl" [ngStyle]="{ color: condicion ? 'lightblue' : 'lightgreen' }">
-        NgStyle with inline styles
-      </span>
+      <div class="flex justify-between items-center flex-wrap mb-6">
+        <span
+          class="block font-semibold text-xl"
+          [ngStyle]="{ color: condicion ? 'lightblue' : 'lightgreen' }"
+        >
+          NgStyle with inline styles
+        </span>
 
-      <div>
-        <code class="prose block bg-base-200 p-4 rounded">
-          [ngStyle]="{{ "{" }} color: condicion ? 'lightblue' : 'lightgreen'
-          {{ "}" }}"
-        </code>
+        <div>
+          <code class="prose block bg-base-200 p-4 rounded">
+            [ngStyle]="{{ "{" }} color: condicion ? 'lightblue' : 'lightgreen'
+            {{ "}" }}"
+          </code>
+        </div>
       </div>
-    </div>
 
-    <div class="flex justify-between items-center flex-wrap mb-6">
-      <span class="font-semibold text-xl" [ngStyle]="{ color: condicion ? 'text-green-500' : 'text-yellow-500' }">
-        ngStyle with Tailwind
-      </span>
+      <div class="flex justify-between items-center flex-wrap mb-6">
+        <span
+          class="font-semibold text-xl"
+          [ngStyle]="{
+            color: condicion ? 'text-green-500' : 'text-yellow-500'
+          }"
+        >
+          ngStyle with Tailwind
+        </span>
 
-      <div>
-        <code class="prose block bg-base-200 p-4 rounded">
-          [ngStyle]="&#123; color: condicion ? 'text-green-500' :
-          'text-yellow-500' &#125;"
-        </code>
+        <div>
+          <code class="prose block bg-base-200 p-4 rounded">
+            [ngStyle]="&#123; color: condicion ? 'text-green-500' :
+            'text-yellow-500' &#125;"
+          </code>
+        </div>
       </div>
-    </div>
 
-    <div class="flex justify-between items-center flex-wrap mb-6">
-      <span class="font-semibold text-xl" [ngClass]="!condicion ? 'text-lime-500' : 'text-emerald-500'">
-        NgClass with Tailwind
-      </span>
-
-      <div>
-        <code class="prose block bg-base-200 p-4 rounded">
+      <div class="flex justify-between items-center flex-wrap mb-6">
+        <span
+          class="font-semibold text-xl"
           [ngClass]="!condicion ? 'text-lime-500' : 'text-emerald-500'"
-        </code>
+        >
+          NgClass with Tailwind
+        </span>
+
+        <div>
+          <code class="prose block bg-base-200 p-4 rounded">
+            [ngClass]="!condicion ? 'text-lime-500' : 'text-emerald-500'"
+          </code>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <h2 class="text-3xl font-semibold mb-6">Ng-container and ng-template</h2>
-    <span class="block my-8">
-      ng-container renders its content but without any additional wrapper
-      element, whereas ng-template does not render its content immediately; it's
-      a placeholder for content that can be rendered elsewhere or conditionally
-    </span>
+    <section>
+      <h2 class="text-3xl font-semibold mb-6">Ng-container and ng-template</h2>
+      <p class="my-8">
+        ng-container renders its content but without any additional wrapper
+        element, whereas ng-template does not render its content immediately;
+        it's a placeholder for content that can be rendered elsewhere or
+        conditionally.
+      </p>
 
-    <div class="flex w-full flex-col lg:flex-row">
-      <div class="rounded-box grid flex-grow place-items-center">
-        <div class="mockup-code bg-primary text-primary-content">
-          <pre data-prefix="$">
+      <div class="flex w-full flex-col lg:flex-row">
+        <div class="rounded-box grid flex-grow place-items-center">
+          <div class="mockup-code bg-primary text-primary-content w-full lg:mr-8">
+            <pre data-prefix="$">
             <code class="p-5">
   &lt;ng-container&gt;
     Ill will not render as a tag instead i'll
@@ -72,12 +88,12 @@
   &lt;/ng-container&gt;
           </code>
         </pre>
+          </div>
         </div>
-      </div>
-      <div class="divider lg:divider-horizontal">kind of</div>
-      <div class="rounded-box grid flex-grow place-items-center">
-        <div class="mockup-code bg-secondary text-secondary-content">
-          <pre data-prefix="$">
+        <div class="divider lg:divider-horizontal mx-7">kind of</div>
+        <div class="rounded-box grid flex-grow place-items-center">
+          <div class="mockup-code bg-secondary text-secondary-content w-full lg:ml-8">
+            <pre data-prefix="$">
             <code>
   &lt;&gt;
     Im also a way to group a list of children
@@ -85,19 +101,21 @@
   &lt;&sol;&gt;
           </code>
         </pre>
+          </div>
         </div>
       </div>
-    </div>
 
-    <span class="block my-10">Use ng-container when you need to group elements without adding extra
-      elements to the DOM. Use ng-template when you need to define content that
-      should be rendered conditionally or reused in multiple places in the
-      application.</span>
+      <p
+        >Use ng-container when you need to group elements without adding extra
+        elements to the DOM. Use ng-template when you need to define content
+        that should be rendered conditionally or reused in multiple places in
+        the application.</p
+      >
 
-    <div class="flex w-full flex-col lg:flex-row">
-      <div class="rounded-box grid flex-grow place-items-center">
-        <div class="mockup-code bg-primary text-primary-content  w-full mr-8">
-          <pre data-prefix="$">
+      <div class="flex w-full flex-col lg:flex-row">
+        <div class="rounded-box grid flex-grow place-items-center">
+          <div class="mockup-code bg-primary text-primary-content w-full lg:mr-8">
+            <pre data-prefix="$">
             <code class="p-5">
   &#123;
     isLoggedIn ? &lt;MyComponent />
@@ -106,12 +124,14 @@
   &#125;
           </code>
         </pre>
+          </div>
         </div>
-      </div>
-      <div class="divider lg:divider-horizontal mx-5">kind of</div>
-      <div class="rounded-box grid flex-grow place-items-center">
-        <div class="mockup-code bg-secondary text-secondary-content w-full ml-8">
-          <pre data-prefix="$">
+        <div class="divider lg:divider-horizontal mx-5">kind of</div>
+        <div class="rounded-box grid flex-grow place-items-center">
+          <div
+            class="mockup-code bg-secondary text-secondary-content w-full lg:ml-8"
+          >
+            <pre data-prefix="$">
             <code>
   &lt;div *ngIf="number %2 == 0; else odd"&gt;
   Even
@@ -121,62 +141,72 @@
   &lt;/ng-template&gt;
           </code>
         </pre>
+          </div>
         </div>
       </div>
-    </div>
-
+    </section>
     <div class="mt-8">
       <h2 class="text-3xl font-semibold mb-6">Ng-if under the hood</h2>
-      <span class="my-6 block">Angular handles ngIf in a more sophisticated way than just adding or
+      <p
+        >Angular handles ngIf in a more sophisticated way than just adding or
         removing elements from the DOM. Internally, when using ngIf, Angular
-        works with ng-template and ViewContainerRef</span>
+        works with ng-template and ViewContainerRef.</p
+      >
 
-      <code class="prose block bg-base-200 p-4 rounded">
-        &lt;ng-template [ngIf]="condicion"&gt; <br>
-        Me renderice <br>
+      <code class="prose block bg-base-200 p-4 rounded-md">
+        &lt;ng-template [ngIf]="condicion"&gt; <br />
+        Me renderice <br />
         &lt;/ng-template&gt;
       </code>
     </div>
 
     <h2 class="text-3xl font-semibold my-6">Ng-For</h2>
-      <span class="my-8 block">
-        The next approach will render a div for arch item on the numbers list,
-        there is no container here
-      </span>
-      <div class="bg-primary my-4" *ngFor="let item of numbers">
-        <p>{{ item }}</p>
-      </div>
+    <p class="rounded ">
+      The next approach will render a div for arch item on the numbers list,
+      there is no container here.
+    </p>
+    <div class="bg-primary my-4" *ngFor="let item of numbers">
+      <p class="rounded text-center py-4 text-2xl">{{ item }}</p>
+    </div>
 
-      <span class="my-5 block">
-        Ng container is usefull when we want to <strong>repeat</strong> each
-        HTML element inside the loop
-      </span>
-      <ul>
-        <ng-container *ngFor="let item of numbers">
-          <p class="bg-secondary mb-4">{{ item }}</p>
-        </ng-container>
-      </ul>
-
-      <span class="my-8 block">
-        <strong>trackBy</strong> will help to identify each element as unique
-        and if that element changes then Angular will detect that specific
-        change and will not have to change the entire list.
-      </span>
-
-      <ng-container *ngFor="let item of persons; let i = index; trackBy: trackByPersonById">
-        <span class="my-8"><strong> <strong> i:</strong> {{ i }} item: </strong>{{ item.name
-          }}<br>
-        </span>
+    <p >
+      Ng container is usefull when we want to <strong>repeat</strong> each HTML
+      element inside the loop.
+    </p>
+    <ul>
+      <ng-container *ngFor="let item of numbers">
+        <p class="bg-secondary mb-4 py-4 text-2xl rounded text-center">{{ item }}</p>
       </ng-container>
+    </ul>
 
-      <button class="btn btn-secondary block btn-wide mx-auto" (click)="updateList()">
-        Update list
-      </button>
+    <p >
+      <strong>trackBy</strong> will help to identify each element as unique and
+      if that element changes then Angular will detect that specific change and
+      will not have to change the entire list.
+    </p>
 
-      <h2 class="text-2xl font-semibold my-6 space-heading"> We cannot use more than 1 directive for a sigle HTML tag</h2>
+    <ng-container
+      *ngFor="let item of persons; let i = index; trackBy: trackByPersonById"
+    >
+      <p class="rounded"
+        ><strong> <strong> i:</strong> {{ i }} item: </strong>{{ item.name
+        }}<br />
+      </p>
+    </ng-container>
 
-      <div class="mockup-code mb-8">
-        <pre class="bg-success text-success-content" data-prefix="1">
+    <button
+      class="btn btn-secondary block btn-wide mx-auto"
+      (click)="updateList()"
+    >
+      Update list
+    </button>
+
+    <h2 class="text-2xl font-semibold my-6 space-heading">
+      We cannot use more than 1 directive for a sigle HTML tag
+    </h2>
+
+    <div class="mockup-code mb-8">
+      <pre class="bg-success text-success-content" data-prefix="1">
 
           <code>
             <strong>Correct way ✅</strong>
@@ -187,7 +217,7 @@
             &lt;/ng-container&gt;
           </code>
         </pre>
-        <pre class="bg-warning text-warning-content" data-prefix="2">
+      <pre class="bg-warning text-warning-content" data-prefix="2">
           <code>
             <strong>Wrong way ❌</strong>
             &lt;div *ngIf="show" *ngFor="let item of items"&gt;
@@ -195,22 +225,35 @@
             &lt;/div&gt;
         </code>
         </pre>
+    </div>
+
+    <h2 class="text-3xl font-semibold my-6 space-heading">
+      Creating our own directive
+    </h2>
+    <span class="block my-4"
+      >Angular allow to create personalized directives using HostBinding and
+      HostListener.</span
+    >
+    <div class="flex mb-12 flex-wrap gap-6">
+      <div
+        my-directive
+        [changeOnLeave]="true"
+        class="truncate bg-base-300 rounded-box grid h-35 p-5 flex-grow place-items-center gap-4"
+      >
+        <p>&#64;HostBinding()</p>
+        Linking properties, attributes and styles.
       </div>
-
-
-      <h2 class="text-3xl font-semibold my-6 space-heading">Creating our own directive</h2>
-      <span class="block my-4">Angular allow to create personalized directives using HostBinding and HostListener</span>
-      <div class="flex w-full mb-12 flex-wrap gap-6">
-        <div my-directive [changeOnLeave]="true"  class="truncate bg-base-300 rounded-box grid h-35 p-5 flex-grow place-items-center gap-4">
-          <p>&#64;HostBinding()</p>
-          Linking properties, attributes and styles.
-        </div>
-        <div class="divider divider-horizontal [@media(max-width:1000px)]:hidden">And</div>
-        <div  my-directive [changeOnLeave]="true" class=" truncate bg-base-300 rounded-box grid h-35 p-5 flex-grow place-items-center gap-4">
-          <p>&#64;HostListening()</p>
-          Linking events.
-        </div>
+      <div class="divider divider-horizontal [@media(max-width:1000px)]:hidden">
+        And
       </div>
-
+      <div
+        my-directive
+        [changeOnLeave]="true"
+        class="truncate bg-base-300 rounded-box grid h-35 p-5 flex-grow place-items-center gap-4"
+      >
+        <p>&#64;HostListening()</p>
+        Linking events.
+      </div>
+    </div>
   </div>
 </main>

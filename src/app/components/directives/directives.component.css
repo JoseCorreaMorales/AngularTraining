@@ -2,6 +2,15 @@
   margin: 2.5rem 0;
 }
 
-span {
-  font-size: 1.2rem;
+p {
+  margin: 2.1rem 0;
+}
+
+span, p {
+  font-size: 1.23rem;
+}
+
+.mockup-code {
+  font-size: 1.23rem;
+  font-weight: 400;
 }

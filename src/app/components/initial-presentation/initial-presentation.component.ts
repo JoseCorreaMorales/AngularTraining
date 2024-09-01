@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-initial-presentation',
@@ -6,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./initial-presentation.component.css']
 })
 export class InitialPresentationComponent implements OnInit {
-
-  constructor() { }
+  textURL : string = "helloAngular"
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +19,10 @@ export class InitialPresentationComponent implements OnInit {
       element.scrollIntoView({behavior: 'smooth'})
     }
 
+  }
+
+  navigateToRontingExample() : void {
+    this.router.navigate(['/routing', this.textURL])
   }
 
 }
