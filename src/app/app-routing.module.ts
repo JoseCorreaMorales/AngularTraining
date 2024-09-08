@@ -17,6 +17,7 @@ const routes: Routes = [
     { path: 'directives', component: DirectivesComponent },
     { path: 'controls', component: ControlsComponent },
     { path: 'routing/:helloAngular', component: RoutingComponent },
+    { path: '**', component: DirectivesComponent },
 ];
 
 @NgModule({

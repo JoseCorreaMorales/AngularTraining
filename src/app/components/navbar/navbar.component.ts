@@ -23,6 +23,7 @@ export class NavbarComponent implements OnInit {
     this.currentTheme = theme
     this.themeService.setTheme(theme)
     localStorage.setItem('selected-theme', theme);
+    console.log("click");
 
   }
 

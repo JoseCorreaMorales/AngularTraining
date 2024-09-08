@@ -15,64 +15,70 @@
 <!-- Toast alert message -->
 <div class="toast z-50" *ngIf="isShowToast">
   <div class="alert alert-success">
-    <span
-      ><strong>"Hello Angular"</strong> has succesfully passed in the
-      URL!🥳</span
-    >
+    <span><strong>"Hello Angular"</strong> has succesfully passed in the
+      URL!🥳</span>
   </div>
 </div>
 
 <div class="mx-auto w-10/12">
+  <!-- Router Module -->
+  <section class="content-section">
+    <h2 class="text-2xl font-semibold">Router Module</h2>
+    <p class="my-5">
+      Angular's routing functionality is provided by the RouterModule from the
+      angular/router package. To set up routing, its needed to import
+      RouterModule in the main module.
+    </p>
+    <p class="my-5">The most basic route in Angular need:</p>
 
-  <h2 class="text-2xl font-semibold my-6">Router Module</h2>
-  <p class="my-5">
-    Angular's routing functionality is provided by the RouterModule from the angular/router package. To set up routing, its needed to import RouterModule in the main module.
-  </p>
-  <p class="my-5">The most basic route in Angular need:</p>
-  <ul>
-    <li>Path</li>
-    <li>Componets that wll be mached with that specific route</li>
-  </ul>
-
-
-
-
-  <h2 class="text-2xl font-semibold my-6">Navigating into routes or componets</h2>
-  <p class="my-5">
-    Exist many ways to navigate into routes components the most common ways are
-    with a function that navigates to an specified route and the second one is
-    with routerLink directly in the HTML.
-  </p>
-
-  <div class="mockup-browser border bg-base-300">
-    <div class="mockup-browser-toolbar">
-      <div
-        class="input w-[90%] mx-auto my-2 flex justify-center items-center gap-3"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="size-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-          />
-        </svg>
-        <p>https://angular-training.com/helloAngular</p>
-      </div>
+    <div class="overflow-x-auto">
+      <table class="table table-xs w-full">
+        <tbody>
+          <tr>
+            <th>1</th>
+            <td>Path.</td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <td class="truncate">
+              Component that wll be matched with that specific route/Path (include route params if necessary).
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="flex justify-center px-4 py-16 bg-base-200">
-      <div class="flex w-full">
-        <div
-          class="grid h-auto flex-grow card bg-base-300 rounded-box place-items-center"
-        >
-            <code class="prose block p-4 rounded-md w-full">
-             <pre>
+  </section>
+
+  <!-- Navigation -->
+  <section class="content-section">
+    <h2 class="text-2xl font-semibold">Navigating into routes or componets</h2>
+    <p class="my-5">
+      There are many ways to navigate into routes components the most common ways
+      are with a <strong>function</strong> that navigates to an specified route
+      and the second one is with <strong>routerLink</strong> directly in the
+      HTML.
+    </p>
+
+    <div class="mockup-browser border bg-base-300">
+      <div class="mockup-browser-toolbar">
+        <div class="input w-[90%] mx-auto my-2 flex justify-center items-center gap-3">
+          <svg class="size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
+          </svg>
+          <p>https://angular-training.com/helloAngular</p>
+        </div>
+      </div>
+      <div class="px-4 py-16 bg-base-200">
+        <!-- flex justify-center -->
+        <div class="flex w-full flex-wrap">
+          <div class="grid h-auto flex-grow card bg-secondary rounded-box place-items-center">
+
+            <code class="p-4 rounded-md text-lg flex gap-x-4">
+              <svg class="size-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>HTML5</title>
+                <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"></path>
+              </svg>
+              <pre>
 &lt;button
   class="btn btn-primary"
   routerLink="/">
@@ -80,34 +86,147 @@
 &lt;/button&gt;
              </pre>
             </code>
-        </div>
-        <div class="divider divider-horizontal">OR</div>
-        <div
-          class="grid h-auto flex-grow card bg-base-300 rounded-box place-items-center"
-        >
-        <code class="prose block p-4 rounded-md w-full">
-          <pre>
+          </div>
+          <div class="divider divider-horizontal hidden sm:flex">OR</div>
+          <div class="grid h-auto flex-grow card bg-primary rounded-box place-items-center">
+            <!-- TODO: align ts icon aside ts code -->
+            <code class="p-4 rounded-md text-lg max-w-64 sm:max-w-max flex gap-x-4">
+              <svg class="size-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>HTML5</title>
+                <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"></path>
+              </svg>
+              <svg class="size-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>TypeScript</title>
+                <path d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"></path>
+              </svg>
+              <pre>
 &lt;button
 class="btn btn-primary"
 (click)="navigateToHome()">
 Go Home
 &lt;/button&gt;
-TS
 constructor(private router : Router)
 navigateToHome() &#123;
-  this.router.navigate(['/')
+  this.router.navigate(['/'])
 &#125;
           </pre>
-         </code>
+            </code>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
+  <!-- Accessing  params -->
+  <section class="content-section">
+    <h2 class="text-2xl font-semibold">Accessing to route parameters</h2>
+    <p class="my-5">
+      In angular its possible to access the data that comes from the URL, the
+      <strong>Reactive way</strong> and the <strong>Static way</strong>. However
+      whichever option it is used, it is necesary to inject
+      <i>Activated Route</i> in the contructor.
+    </p>
 
-  <h2 class="text-2xl font-semibold my-6">Passing and receiving data with routing</h2>
-  <p class="my-5">
+    <div class="overflow-x-auto">
+      <table class="table table-xs w-full">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Accessing Method.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>1</th>
+            <td>Route Subscribing (Observable Approach)</td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <td>Static (Snapshot Approach).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-  </p>
+    <div class="flex flex-col gap-8 my-8">
+      <!-- card 1 -->
+      <div class="card lg:card-side bg-base-100 shadow-xl">
+        <!--  -->
+        <code class="prose p-4 rounded-md w-3/4 text-lg bg-primary grid place-items-center">
+          <pre class="bg-accent text-primary-content font-semibold text-lg w-11/12">
+this.router.paramMap.subscribe&#40;paramMap => &#123;
+  const myURLMessage = paramMap.get&#40;'helloAngular'&#41;;
+  &#125;&#41;
+  </pre>
+        </code>
 
+        <!--  -->
+
+        <div class="card-body">
+          <h2 class="card-title">Route Subscribing</h2>
+          <p>
+            <strong>Reactive</strong>: This approach relies on subscribing to an
+            Observable. This means the function runs every time the paramMap
+            value changes, i.e., when the route or the parameter is updated
+            without reloading the page.
+          </p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary" (click)="getRouteParam()">
+              Try it!
+            </button>
+          </div>
+          <p class="font-bold">{{ routeInfo }}</p>
+        </div>
+      </div>
+      <!-- card 2 -->
+      <div class="card lg:card-side bg-base-100 shadow-xl">
+        <!--  -->
+        <code class="prose p-4 rounded-md text-lg bg-primary grid place-items-center w-3/4">
+          <pre class="bg-accent text-primary-content font-semibold text-lg w-11/12">
+const routeInfo = this.router.snapshot.paramMap.get('helloAngular')
+  </pre>
+        </code>
+
+        <!--  -->
+
+        <div class="card-body">
+          <h2 class="card-title">Static Approach</h2>
+          <p>
+            <strong>Static</strong>: Captures the route parameters only once
+            when the component loads. It will not automatically update if the
+            parameters change after the component’s initialization.
+          </p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary" (click)="getRouteParam()">
+              Try it!
+            </button>
+          </div>
+          <p class="font-bold">{{ routeInfo }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sending params -->
+  <section class="content-section">
+    <h2 class="text-2xl font-semibold">Sending information into the URL</h2>
+    To send data in the URL the route needs to be defined into Router Module with a
+    <strong> : </strong> after the given name, for example Path: <strong>'routing/:helloAngular'</strong>,
+    then inject the Router Module with path to navigate next to data to be sended
+
+    <div class="grid h-auto w-3/5  my-6
+     mx-auto flex-grow card bg-secondary rounded-box place-items-center">
+
+      <code class="  p-4 rounded-md text-lg flex gap-x-4 w-full overflow-x-auto items-center justify-center">
+        <svg class="size-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <title>HTML5</title>
+          <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"></path>
+        </svg>
+        <pre class=" mt-5">
+this.router.navigate(['/routing', 'helloAngular']);
+       </pre>
+      </code>
+    </div>
+
+  </section>
 </div>
