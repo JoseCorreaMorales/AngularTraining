@@ -7,6 +7,7 @@ import { DirectivesComponent } from './components/directives/directives.componen
 import { ControlsComponent } from './components/controls/controls.component';
 import { InitialPresentationComponent } from './components/initial-presentation/initial-presentation.component';
 import { RoutingComponent } from './components/routing/routing.component';
+import { FourOFourComponent } from './components/four-ofour/four-ofour.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,7 @@ const routes: Routes = [
     { path: 'directives', component: DirectivesComponent },
     { path: 'controls', component: ControlsComponent },
     { path: 'routing/:helloAngular', component: RoutingComponent },
-    { path: '**', component: DirectivesComponent },
+    { path: '**', component: FourOFourComponent },
 ];
 
 @NgModule({

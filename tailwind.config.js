@@ -13,7 +13,8 @@ module.exports = {
       'cupcake',
       'pastel',
       'retro', // first one will be the default theme
-      'synthwave'
+      'synthwave',
+      'dracula'
     ],
   },
 }

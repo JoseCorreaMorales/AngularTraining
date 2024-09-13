@@ -22,6 +22,7 @@ import { InitialPresentationComponent } from './components/initial-presentation/
 import { MyOwnDirectiveDirective } from './components/directives/my-own-directive.directive';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RoutingComponent } from './components/routing/routing.component';
+import { FourOFourComponent } from './components/four-ofour/four-ofour.component';
 //import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -38,6 +39,7 @@ import { RoutingComponent } from './components/routing/routing.component';
     MyOwnDirectiveDirective,
     NavbarComponent,
     RoutingComponent,
+    FourOFourComponent,
     //PersonsComponent
 
 

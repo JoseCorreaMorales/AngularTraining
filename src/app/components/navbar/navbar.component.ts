@@ -8,7 +8,7 @@ import { ThemeService } from 'src/app/services/theme.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  themes: Array<string> = ['cupcake', 'pastel', 'retro', 'synthwave']
+  themes: Array<string> = ['cupcake', 'pastel', 'retro', 'synthwave', 'dracula']
   currentTheme: string = 'default';
 
 
