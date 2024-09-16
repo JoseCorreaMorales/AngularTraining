@@ -23,6 +23,7 @@ import { MyOwnDirectiveDirective } from './components/directives/my-own-directiv
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RoutingComponent } from './components/routing/routing.component';
 import { FourOFourComponent } from './components/four-ofour/four-ofour.component';
+import { RouterModule } from '@angular/router';
 //import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -49,6 +50,7 @@ import { FourOFourComponent } from './components/four-ofour/four-ofour.component
     AppRoutingModule,
     //FormsModule,
     HttpClientModule,
+    RouterModule,
     // Service Worker for PWA
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
