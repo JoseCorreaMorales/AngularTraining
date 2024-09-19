@@ -9,6 +9,36 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * **Angular CLI:** v13.1.4
 * **NPM:** v10.7.0
 
+## feature-based 
+```
+src/
+|-- app/
+|   |-- core/
+|   |   |-- services/
+|   |   |-- guards/
+|   |   |-- interceptors/
+|   |-- shared/
+|   |   |-- components/
+|   |   |-- directives/
+|   |   |-- pipes/
+|   |-- features/
+|   |   |-- feature1/
+|   |   |   |-- components/
+|   |   |   |-- services/
+|   |   |   |-- feature1.module.ts
+|   |   |-- feature2/
+|   |   |   |-- components/
+|   |   |   |-- services/
+|   |   |   |-- feature2.module.ts
+|   |-- models/
+|   |-- app.component.ts
+|   |-- app.module.ts
+|   |-- app-routing.module.ts
+|-- assets/
+|-- environments/
+
+```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

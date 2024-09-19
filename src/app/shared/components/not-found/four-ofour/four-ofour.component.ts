@@ -13,7 +13,6 @@ export class FourOFourComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       this.router.navigate(['/'])
-      console.log("hey timmer works");
     }, 10000);
   }
 

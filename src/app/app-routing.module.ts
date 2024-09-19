@@ -1,13 +1,14 @@
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CounterComponent } from './components/counter/counter.component';
-import { UserListComponent } from './components/user-list/user-list.component';
-import { ParentComponent } from './components/parent/parent.component';
-import { DirectivesComponent } from './components/directives/directives.component';
-import { ControlsComponent } from './components/controls/controls.component';
-import { InitialPresentationComponent } from './components/initial-presentation/initial-presentation.component';
-import { RoutingComponent } from './components/routing/routing.component';
-import { FourOFourComponent } from './components/four-ofour/four-ofour.component';
+import { CounterComponent } from './features/counter/components/counter/counter.component';
+/* import { UserListComponent } from './components/user-list/user-list.component'; */
+import { UserListComponent } from './features/inputOutputUsers/components/user-list/user-list.component';
+import { ParentComponent } from './features/banana-box/components/parent/parent.component';
+import { DirectivesComponent } from './features/directives/directives/directives.component';
+import { ControlsComponent } from './features/forms/components/controls/controls.component';
+import { InitialPresentationComponent } from './features/home/components/initial-presentation/initial-presentation.component';
+import { RoutingComponent } from './features/routing/components/routing/routing.component';
+import { FourOFourComponent } from './shared/components/not-found/four-ofour/four-ofour.component';
 
 
 const routes: Routes = [

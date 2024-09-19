@@ -1,56 +1,42 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-//import { CounterComponent } from './counter/counter.component';
-//import { PersonsComponent } from './components/persons/persons.component';
-
-import { CounterComponent } from  '../app/components/counter/counter.component';
-import { UserListComponent } from './components/user-list/user-list.component';
-import { UserCardComponent } from './components/user-card/user-card.component'
-//import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ParentComponent } from './components/parent/parent.component';
-import { ChildComponent } from './components/parent/child/child.component';
-import { DirectivesComponent } from './components/directives/directives.component';
-import { ControlsComponent } from './components/controls/controls.component';
-import { FormControl } from '@angular/forms';
+
+
+
+import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { InitialPresentationComponent } from './components/initial-presentation/initial-presentation.component';
-import { MyOwnDirectiveDirective } from './components/directives/my-own-directive.directive';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { RoutingComponent } from './components/routing/routing.component';
-import { FourOFourComponent } from './components/four-ofour/four-ofour.component';
+
+import { FourOFourComponent } from './shared/components/not-found/four-ofour/four-ofour.component';
 import { RouterModule } from '@angular/router';
-//import { FormsModule } from '@angular/forms';
+import { InputOutputUsersModule } from './features/inputOutputUsers/input-output-users.module';
+import { SharedModule } from './shared/shared.module';
+import { BananaBoxModule } from './features/banana-box/banana-box.module';
+import { FormsModule } from './features/forms/forms.module';
+import { DirectivesModule } from './features/directives/directives.module';
+import { HomeModule } from './features/home/home.module';
+import { RoutingModule } from './features/routing/routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CounterComponent,
-    UserListComponent,
-    UserCardComponent,
-    ParentComponent,
-    ChildComponent,
-    DirectivesComponent,
-    ControlsComponent,
-    InitialPresentationComponent,
-    MyOwnDirectiveDirective,
-    NavbarComponent,
-    RoutingComponent,
     FourOFourComponent,
-    //PersonsComponent
-
-
   ],
   imports: [
+    InputOutputUsersModule,
+    SharedModule,
+    BananaBoxModule,
+    FormsModule,
+    DirectivesModule,
+    HomeModule,
+    RoutingModule,
+    RouterModule,
     BrowserModule,
     AppRoutingModule,
     //FormsModule,
     HttpClientModule,
-    RouterModule,
     // Service Worker for PWA
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,

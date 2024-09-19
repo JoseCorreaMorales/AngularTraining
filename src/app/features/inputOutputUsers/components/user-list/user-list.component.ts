@@ -1,7 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { User } from './user-list.types';
-import { ApiServiceService } from '../../services/api-service.service';
 import { Router } from '@angular/router';
+import { UsersService } from '../services/users-service';
 
 @Component({
   selector: 'app-user-list',
@@ -39,7 +39,7 @@ export class UserListComponent implements OnChanges, OnInit {
   }
 
 
-  constructor(private api : ApiServiceService, private router: Router) { }
+  constructor(private api : UsersService, private router: Router) { }
 
   ngOnInit(): void {
     this.api.getUsers().subscribe((data) => {
