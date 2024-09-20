@@ -14,4 +14,7 @@ export class ThemeService {
   getTheme() : string {
     return this.currentTheme
   }
+  getSavedTheme(): string {
+    return localStorage.getItem('selected-theme') || this.currentTheme;
+  }
 }

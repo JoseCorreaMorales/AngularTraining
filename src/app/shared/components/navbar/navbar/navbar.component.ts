@@ -15,7 +15,8 @@ export class NavbarComponent implements OnInit {
   constructor(private themeService: ThemeService) { }
 
   ngOnInit(): void {
-    const savedTheme = localStorage.getItem('selected-theme') || 'default';
+    //const savedTheme = localStorage.getItem('selected-theme') || 'default';
+    const savedTheme = this.themeService.getSavedTheme();
     this.changeTheme(savedTheme);
   }
 

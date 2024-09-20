@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ThemeService } from 'src/app/core/services/theme.service';
 
 @Component({
   selector: 'counter',
@@ -38,5 +39,6 @@ export class CounterComponent implements OnInit {
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }

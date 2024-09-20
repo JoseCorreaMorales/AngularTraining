@@ -1,14 +1,14 @@
 <section class="flex justify-center p-8 bg-base-300">
   <div class="p-6 w-full mt-5">
-    <h1 class="text-2xl font-bold">Hello, DaisyUI with Angular!</h1>
-    <p>Comunicate the parent component (list) with the child component (cards) using jsonplaceholder API.</p>
+    <h1 class="text-2xl font-bold">Input And Output Example</h1>
+    <p class="my-3">Comunicate the parent component (list) with the child component (cards) using <strong>jsonplaceholder API.</strong></p>
     <button class="btn btn-primary mt-4" (click)="goHome()">Go Home</button>
   </div>
 </section>
 
 <section class="text-center">
   <div *ngIf="pricipalUser">
-    <h2 class="text-[1.5rem] m-8">Principal User is: {{ pricipalUser }}</h2>
+    <h2 class="text-xl m-8">Principal User is: <span class="font-bold">{{ pricipalUser }}</span></h2>
   </div>
 </section>
 

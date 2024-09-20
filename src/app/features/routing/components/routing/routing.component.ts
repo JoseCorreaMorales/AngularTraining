@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, RouterModule } from '@angular/router';
-import { RoutingService } from './routing.service';
+import { RoutingService } from '../../services/routing.service';
 
 interface Product {
   title: string,

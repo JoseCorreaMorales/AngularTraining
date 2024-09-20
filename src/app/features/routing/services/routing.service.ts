@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RoutingService {
-  apiURL : string = "https://fakestoreapi.com/products"
+  private apiURL : string = "https://fakestoreapi.com/products"
 
 
   getProducts(params: { [key: string]: string }): Observable<any> {

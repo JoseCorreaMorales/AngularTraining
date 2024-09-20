@@ -18,6 +18,7 @@ import { FormsModule } from './features/forms/forms.module';
 import { DirectivesModule } from './features/directives/directives.module';
 import { HomeModule } from './features/home/home.module';
 import { RoutingModule } from './features/routing/routing.module';
+import { CounterModule } from './features/counter/counter.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { RoutingModule } from './features/routing/routing.module';
     FourOFourComponent,
   ],
   imports: [
+    CounterModule,
     InputOutputUsersModule,
     SharedModule,
     BananaBoxModule,
