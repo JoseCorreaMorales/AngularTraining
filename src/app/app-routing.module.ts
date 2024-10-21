@@ -5,10 +5,12 @@ import { CounterComponent } from './features/counter/components/counter/counter.
 import { UserListComponent } from './features/inputOutputUsers/components/user-list/user-list.component';
 import { ParentComponent } from './features/banana-box/components/parent/parent.component';
 import { DirectivesComponent } from './features/directives/directives/directives.component';
-import { ControlsComponent } from './features/forms/components/controls/controls.component';
+
+
 import { InitialPresentationComponent } from './features/home/components/initial-presentation/initial-presentation.component';
 import { RoutingComponent } from './features/routing/components/routing/routing.component';
 import { FourOFourComponent } from './shared/components/not-found/four-ofour/four-ofour.component';
+import { MainFormsComponet } from './features/forms/components/main-forms-component/main-forms-component.component';
 
 
 const routes: Routes = [
@@ -16,8 +18,8 @@ const routes: Routes = [
     { path: 'counter', component: CounterComponent },
     { path: 'users', component: UserListComponent },
     { path: 'banana-box', component: ParentComponent },
-    { path: 'directives', component: DirectivesComponent },
-    { path: 'controls', component: ControlsComponent },
+    { path: 'directives', component: DirectivesComponent }, 
+    { path: 'controls', component: MainFormsComponet },
     { path: 'routing/:helloAngular', component: RoutingComponent },
     { path: '**', component: FourOFourComponent },
 ];

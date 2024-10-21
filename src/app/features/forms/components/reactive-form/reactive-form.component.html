@@ -1,0 +1,61 @@
+<form
+  [formGroup]="myForm"
+  class="w-1/2 mx-auto p-5 flex justify-center items-center flex-col gap-9 bg-base-200 rounded-2xl"
+>
+  <h1 class="text-center text-2xl font-bold">My Reactive Form</h1>
+  <!-- name -->
+  <label for="Name" class="">
+    <input
+      name="name"
+      type="text"
+      class="input input-bordered !w-full"
+      placeholder="Name"
+      formControlName="name"
+      [ngStyle]="{ 'input-error': nameControl.invalid }"
+      />
+  </label>
+
+  <!-- lastname -->
+  <label for="Lastname" class="">
+    <input
+      name="name"
+      type="text"
+      class="input input-bordered w-full"
+      placeholder="Lastname"
+      formControlName="lastname"
+    />
+  </label>
+
+  <!-- phonenumber -->
+  <label for="Phone" class="">
+    <input
+      name="name"
+      type="number"
+      class="input input-bordered w-full"
+      placeholder="Phone"
+      formControlName="phone"
+    />
+  </label>
+
+  <button
+    class="btn btn-active btn-primary w-4/5"
+    type="submit"
+    (click)="send()"
+    [disabled]="!FormValid"
+  >
+    Send
+  </button>
+
+  <!-- Errors Block -->
+  <!-- <div class="" *ngIf="nameControl.invalid || lastnameControl.invalid || phoneControl.invalid"> -->
+  <div class="" *ngIf="!FormValid">
+    <p>All fields most be filled.</p>
+  </div>
+
+  <div>
+    <pre class="text-lg font-semibold"
+      >{{ myForm.value | json }}
+        </pre
+    >
+  </div>
+</form>
