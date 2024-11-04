@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./template-driven.component.css']
 })
 export class TemplateDrivenComponent implements OnInit {
+  name: string = '';
 
   constructor() { }
 
