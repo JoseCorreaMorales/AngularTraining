@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { TemplateDrivenComponent } from './components/template-driven/template-driven.component';
 import { MainFormsComponet } from './components/main-forms-component/main-forms-component.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
 
   ],
   imports: [
-    CommonModule, ReactiveFormsModule, RouterModule
+    CommonModule, ReactiveFormsModule, RouterModule, FormsModule
   ],
   exports : [
    // ReativeFormComponent
@@ -25,4 +25,4 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
 
   ]
 })
-export class FormsModule { }
+export class ControlsModule { }

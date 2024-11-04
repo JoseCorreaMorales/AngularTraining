@@ -14,7 +14,7 @@ import { RouterModule } from '@angular/router';
 import { InputOutputUsersModule } from './features/inputOutputUsers/input-output-users.module';
 import { SharedModule } from './shared/shared.module';
 import { BananaBoxModule } from './features/banana-box/banana-box.module';
-import { FormsModule } from './features/forms/forms.module';
+import { ControlsModule } from './features/forms/controls.module';
 import { DirectivesModule } from './features/directives/directives.module';
 import { HomeModule } from './features/home/home.module';
 import { RoutingModule } from './features/routing/routing.module';
@@ -30,14 +30,13 @@ import { CounterModule } from './features/counter/counter.module';
     InputOutputUsersModule,
     SharedModule,
     BananaBoxModule,
-    FormsModule,
+    ControlsModule,
     DirectivesModule,
     HomeModule,
     RoutingModule,
     RouterModule,
     BrowserModule,
     AppRoutingModule,
-    //FormsModule,
     HttpClientModule,
     // Service Worker for PWA
     ServiceWorkerModule.register('ngsw-worker.js', {

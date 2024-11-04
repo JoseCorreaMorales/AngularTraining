@@ -2,6 +2,18 @@
   <section class="flex justify-center w-full p-8 mb-6 bg-base-300">
     <div class="p-6 w-full mt-5">
       <h1 class="text-3xl font-bold">Angular Forms</h1>
+      <p class="mt-4">Angular provides two distinct modules for form handling, <strong>Reactive</strong> Forms and
+        <strong>Template-Driven Forms</strong>, both of which allow creating an internal representation of the form in
+        the DOM to facilitate manipulation and validation. Both modules share a common core with three main elements:
+      </p>
+      <ol class="list-inside list-disc p-4">
+        <li class="p-2"><strong>FormControl</strong>: Represents each field in the form. Provides methods to access and modify the
+          current value, validation state, and other properties.</li>
+        <li class="p-2"><strong>FormGroup</strong>: Groups multiple controls, allowing you to manage them collectively. A FormGroup
+          will be invalid if any of its child controls do not pass validation.</li>
+        <li class="p-2"><strong>FormArray</strong>: Allows handling fields with a variable number of elements, like a list of phone
+          numbers. A FormArray can contain either FormControls or FormGroups.</li>
+      </ol>
       <button class="btn btn-primary mt-4" routerLink="/">Go Home</button>
     </div>
   </section>
