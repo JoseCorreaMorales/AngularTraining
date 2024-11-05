@@ -18,7 +18,7 @@ const routes: Routes = [
     { path: 'counter', component: CounterComponent },
     { path: 'users', component: UserListComponent },
     { path: 'banana-box', component: ParentComponent },
-    { path: 'directives', component: DirectivesComponent }, 
+    { path: 'directives', component: DirectivesComponent },
     { path: 'controls', component: MainFormsComponet },
     { path: 'routing/:helloAngular', component: RoutingComponent },
     { path: '**', component: FourOFourComponent },
