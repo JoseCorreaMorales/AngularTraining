@@ -7,6 +7,7 @@ import { TemplateDrivenComponent } from './components/template-driven/template-d
 import { MainFormsComponet } from './components/main-forms-component/main-forms-component.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import { FormsModule } from '@angular/forms';
+import { FormsRoutingModule } from './forms-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { FormsModule } from '@angular/forms';
 
   ],
   imports: [
-    CommonModule, ReactiveFormsModule, RouterModule, FormsModule
+    CommonModule, ReactiveFormsModule, RouterModule, FormsModule, FormsRoutingModule
   ],
   exports : [
    // ReativeFormComponent

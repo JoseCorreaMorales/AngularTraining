@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CounterComponent } from './components/counter/counter.component';
+import { CounterRoutingModule } from './counter-routing.module';
 
 
 @NgModule({
@@ -9,7 +10,8 @@ import { CounterComponent } from './components/counter/counter.component';
     CounterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    CounterRoutingModule
   ],
   exports : [
     CounterComponent

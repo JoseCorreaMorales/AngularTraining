@@ -26,10 +26,12 @@ src/
 |   |   |   |-- components/
 |   |   |   |-- services/
 |   |   |   |-- feature1.module.ts
+|   |   |   |-- feature2-routing.module.ts
 |   |   |-- feature2/
 |   |   |   |-- components/
 |   |   |   |-- services/
 |   |   |   |-- feature2.module.ts
+|   |   |   |-- feature2-routing.module.ts
 |   |-- models/
 |   |-- app.component.ts
 |   |-- app.module.ts
