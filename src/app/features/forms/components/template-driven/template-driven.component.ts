@@ -6,7 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./template-driven.component.css']
 })
 export class TemplateDrivenComponent implements OnInit {
-  name: string = '';
+
+  user = {
+    name: "Hello",
+    lastname: "Angular",
+    phonenumber: 14,
+  };
+
+
+  send(form: any): void {
+    console.log(form.value);
+  }
 
   constructor() { }
 
