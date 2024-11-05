@@ -6,7 +6,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   templateUrl: './reactive-form.component.html',
   styleUrls: ['./reactive-form.component.css']
 })
-export class ReactiveFormComponent implements OnInit   {
+export class ReactiveFormComponent implements OnInit, OnDestroy {
 
   myForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
@@ -20,24 +20,26 @@ export class ReactiveFormComponent implements OnInit   {
 
   ngOnInit(): void {
   }
-
-  send()  {
+  ngOnDestroy(): void {
+    console.log('ReactiveFormComponent destroyed');
+  }
+  send() {
 
   }
 
-  get FormValid() : boolean {
+  get FormValid(): boolean {
     return this.myForm.valid
   }
 
-  get nameControl() : FormControl {
+  get nameControl(): FormControl {
     return this.myForm.get('name') as FormControl
   }
 
-  get lastnameControl() : FormControl {
+  get lastnameControl(): FormControl {
     return this.myForm.get('lastname') as FormControl
   }
 
-  get phoneControl() : FormControl {
+  get phoneControl(): FormControl {
     return this.myForm.get('phone') as FormControl
   }
 
