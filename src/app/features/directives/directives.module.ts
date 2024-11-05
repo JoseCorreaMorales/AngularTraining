@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DirectivesComponent } from './directives/directives.component';
 import { MyOwnDirectiveDirective } from './directives/my-own-directive.directive';
 import { RouterModule } from '@angular/router';
+import { DirectivesRoutingModule } from './directives-routing.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    DirectivesRoutingModule
   ], exports: [
     DirectivesComponent
   ]
