@@ -40,6 +40,11 @@ src/
 |-- environments/
 
 ```
+## Commands
+### Create a routing module
+```bash
+ng generate module features/feature1/feature1-routing --module=features/feature1/feature1
+```
 
 ## Development server
 
