@@ -15,7 +15,7 @@
 <!-- Toast alert message -->
 <div class="toast z-50" *ngIf="isShowToast">
   <div class="alert alert-success">
-    <span><strong>"Hello Angular"</strong> has succesfully passed in the
+    <span><strong>"{{routeInfo}}"</strong> has succesfully passed in the
       URL!🥳</span>
   </div>
 </div>
@@ -73,7 +73,7 @@
         <div class="flex w-full flex-wrap">
           <div class="grid h-auto flex-grow card bg-secondary rounded-box place-items-center">
 
-            <code class="p-4 rounded-md text-lg flex gap-x-4">
+            <code class="p-4 rounded-md text-lg flex overflow-x-auto gap-x-4">
               <svg class="size-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <title>HTML5</title>
                 <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"></path>
@@ -90,7 +90,7 @@
           <div class="divider divider-horizontal hidden sm:flex">OR</div>
           <div class="grid h-auto flex-grow card bg-primary rounded-box place-items-center">
             <!-- TODO: align ts icon aside ts code -->
-            <code class="p-4 rounded-md text-lg max-w-64 sm:max-w-max flex gap-x-4">
+            <code class="p-4 rounded-md text-lg max-w-64 sm:max-w-max overflow-x-auto flex gap-x-4">
               <svg class="size-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <title>HTML5</title>
                 <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"></path>
@@ -117,212 +117,7 @@ navigateToHome() &#123;
     </div>
   </section>
 
-  <!-- Accessing  params -->
-  <section class="content-section">
-    <h2 class="text-2xl font-semibold">Accessing to route parameters</h2>
-    <p class="my-5">
-      In angular its possible to access the data that comes from the URL, the
-      <strong>Reactive way</strong> and the <strong>Static way</strong>. However
-      whichever option it is used, it is necesary to inject
-      <i>Activated Route</i> in the contructor.
-    </p>
+  <!--  -->
+  <route-parameters></route-parameters>
 
-    <div class="overflow-x-auto">
-      <table class="table table-xs w-full">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Accessing Method.</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>1</th>
-            <td>Route Subscribing (Observable Approach)</td>
-          </tr>
-          <tr>
-            <th>2</th>
-            <td>Static (Snapshot Approach).</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="flex flex-col gap-8 my-8">
-      <!-- card 1 -->
-      <div class="card lg:card-side bg-base-100 shadow-xl">
-        <!--  -->
-        <code class="prose p-4 rounded-md w-3/4 text-lg bg-primary grid place-items-center">
-          <pre class="bg-accent text-primary-content font-semibold text-lg w-11/12">
-this.router.paramMap.subscribe&#40;paramMap => &#123;
-  const myURLMessage = paramMap.get&#40;'helloAngular'&#41;;
-  &#125;&#41;
-  </pre>
-        </code>
-
-        <!--  -->
-
-        <div class="card-body">
-          <h2 class="card-title">Route Subscribing</h2>
-          <p>
-            <strong>Reactive</strong>: This approach relies on subscribing to an
-            Observable. This means the function runs every time the paramMap
-            value changes, i.e., when the route or the parameter is updated
-            without reloading the page.
-          </p>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary" (click)="getRouteParam()">
-              Try it!
-            </button>
-          </div>
-          <p class="font-bold">{{ routeInfo }}</p>
-        </div>
-      </div>
-      <!-- card 2 -->
-      <div class="card lg:card-side bg-base-100 shadow-xl">
-        <!--  -->
-        <code class="prose p-4 rounded-md text-lg bg-primary grid place-items-center w-3/4">
-          <pre class="bg-accent text-primary-content font-semibold text-lg w-11/12">
-const routeInfo = this.router.snapshot.paramMap.get('helloAngular')
-  </pre>
-        </code>
-
-        <!--  -->
-
-        <div class="card-body">
-          <h2 class="card-title">Static Approach</h2>
-          <p>
-            <strong>Static</strong>: Captures the route parameters only once
-            when the component loads. It will not automatically update if the
-            parameters change after the component’s initialization.
-          </p>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary" (click)="getRouteParam()">
-              Try it!
-            </button>
-          </div>
-          <p class="font-bold">{{ routeInfo }}</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sending params -->
-  <section class="content-section">
-    <h2 class="text-2xl font-semibold">Sending information into the URL</h2>
-    To send data in the URL the route needs to be defined into Router Module with a
-    <strong> : </strong> after the given name, for example Path: <strong>'routing/:helloAngular'</strong>,
-    then inject the Router Module with path to navigate next to data to be sended
-
-    <div class="grid h-auto w-3/5  my-6
-     mx-auto flex-grow card bg-secondary rounded-box place-items-center">
-
-      <code class="  p-4 rounded-md text-lg flex gap-x-4 w-full overflow-x-auto items-center justify-center">
-        <svg class="size-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <title>HTML5</title>
-          <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"></path>
-        </svg>
-        <pre class=" mt-5">
-this.router.navigate(['/routing', 'helloAngular']);
-       </pre>
-      </code>
-    </div>
-
-  </section>
-
-
-  <section class="content-section">
-    <h2 class="text-2xl font-semibold">Optional parameters or query parameters</h2>
-    <p>In Angular, there are <strong>two main ways</strong> to work with Query Params:</p>
-
-    <h3 class="text-xl mt-4 font-medium">1. From a function in the component, using the Router service's navigate method to navigate to a route and add query params</h3>
-    <div class="grid h-auto w-3/5  my-6
-    mx-auto flex-grow card bg-primary rounded-box place-items-center">
-
-     <code class="  p-4 rounded-md text-lg flex gap-x-4 w-full overflow-x-auto items-center justify-center">
-       <svg class="size-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-         <title>HTML5</title>
-         <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"></path>
-       </svg>
-       <pre class=" mt-5 p-3">
-this.router.navigate(['/route'], &#123;
-queryParams:&#123;
-param1: 'value', param2: 'otherValue'
-&#125; &#125;);
-      </pre>
-     </code>
-   </div>
-    <h3 class="text-xl mt-4 font-medium">2. Also specifying query params directly in the HTML using the routerLink directive and the queryParams attribute</h3>
-    <div class="grid h-auto w-3/5  my-6
-    mx-auto flex-grow card bg-accent rounded-box place-items-center">
-
-     <code class="  p-4 rounded-md text-lg flex gap-x-4 w-full overflow-x-auto items-center justify-center">
-       <svg class="size-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-         <title>HTML5</title>
-         <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"></path>
-       </svg>
-       <pre class=" mt-5 p-3">
-&#60;a [routerLink]="['/route']"
-[queryParams]="&#123; param1: 'value' &#125;"&#62;
-Sort
-&#60;/a&#62;
-      </pre>
-     </code>
-   </div>
-
-
-
-
-    <div class="flex gap-6 my-5 text-secondary-content font-semibold text-xl">
-      <a
-      [routerLink]="[]"
-      [queryParams]="{sort: 'asc'}"
-      class="hover:underline">
-        <svg
-        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-primary">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0-3.75-3.75M17.25 21 21 17.25" />
-        </svg>
-      </a>
-      <a
-      [routerLink]="[]"
-      [queryParams]="{sort: 'desc'}"
-      class="hover:underline">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-secondary">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h5.25m5.25-.75L17.25 9m0 0L21 12.75M17.25 9v12" />
-      </svg>
-    </a>
-
-      <a (click)="updateQueryParams({limit : '5'})" class="hover:underline">5️⃣</a>
-      <a (click)="updateQueryParams({limit: '10'})" class="hover:underline">🔟</a>
-    </div>
-
-  <div class="flex flex-wrap justify-center gap-5">
-
-    <ng-container *ngFor="let product of products">
-
-      <div class="card glass w-96 h-96">
-        <figure
-        class="h-1/2"
-        >
-          <img
-          class="bg-cover h-full"
-            [src]="product.image"
-            alt="" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title truncate">{{ product.title }}</h2>
-          <span class="truncate">{{ product.description.slice(0, 100)  }}</span>
-          <div class="badge badge-secondary badge-outline">{{ product.category }}</div>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Buy Now!</button>
-          </div>
-        </div>
-      </div>
-    </ng-container>
-  </div>
-
-
-
-
-  </section>
 </div>

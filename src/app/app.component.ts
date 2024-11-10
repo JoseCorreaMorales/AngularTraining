@@ -18,7 +18,14 @@ export class AppComponent implements OnInit {
   constructor(private router: Router, private viewportScroller: ViewportScroller, private themeService: ThemeService) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
-        //movies to (0, 0) when the route changes
+        const queryParamsIndex = event.url.indexOf('?');
+        const currentPath = queryParamsIndex >= 0 ? event.url.substring(0, queryParamsIndex) : event.url;
+
+        if (this.router.url.startsWith(currentPath)) {
+          // dont move when queryParams changes
+          return;
+        }
+
         this.viewportScroller.scrollToPosition([0, 0]);
       }
     });
