@@ -1,0 +1,91 @@
+<section class="my-[10vh]">
+  <h2 class="text-2xl font-semibold">Lazy Loading</h2>
+  <p class="my-4">Lazy Modules in Angular are modules that load only when the user navigates to a specific route, rather
+    than loading with the rest of the application at startup. This approach improves the application's performance by
+    reducing the initial download size</p>
+
+  <div class="overflow-x-auto">
+    <table class="table table-xs w-full">
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td><strong>Remove the module from AppModule</strong>: If the module is being imported directly into
+            AppModule, remove this
+            import.</td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td class="truncate">
+            <strong>Configure the module with loadChildren</strong> in the route configuration. Use a function that
+            loads the module only
+            when its route is requested:
+          </td>
+        </tr>
+
+        <tr>
+          <th>i.e</th>
+          <td class="truncate">
+            <div class="mockup-code">
+              <pre data-prefix="$">
+  <code>&#123; path: 'route', loadChildren: () => import('path/to/module').then(m => m.ModuleName) &#125;
+                </code>
+              </pre>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <th>3</th>
+          <td class="truncate">
+            <strong>Modify the child route</strong> of the module to use an empty path if it's loading as a child of the
+            main route.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>
+
+<section class="my-[10vh]">
+  <h2 class="text-2xl font-semibold">Route Guards</h2>
+  <div class=" flex justify-center items-center flex-wrap">
+    <p class="my-4">Guards in Angular are functions that run before loading a route, allowing or denying access based on
+      specified conditions. Angular provides several types of guards:</p>
+
+    <div class="overflow-x-auto mb-8">
+      <table class="table table-xs w-full">
+        <tbody>
+          <tr>
+            <th>1</th>
+            <td class="truncate"><strong>CanActivate</strong>: Controls initial access to a route. For example, it can be
+              used to check if a user is logged in.</td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <td class="truncate">
+              <strong>CanActivateChild</strong>: Controls access to child routes of a specific node.
+            </td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <td class="truncate">
+              <strong>CanDeactivate</strong>: Allows handling route exits, such as showing a confirmation dialog if there
+              are unsaved changes.
+            </td>
+          </tr>
+          <tr>
+            <th>4</th>
+            <td class="truncate">
+              <strong>CanLoad</strong>: Controls whether a user can load a Lazy Module. It’s useful to prevent an
+              unauthenticated user from downloading private modules.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <app-login></app-login>
+
+  </div>
+</section>

@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'template-driven',
   templateUrl: './template-driven.component.html',
   styleUrls: ['./template-driven.component.css']
 })
-export class TemplateDrivenComponent implements OnInit {
+export class TemplateDrivenComponent implements OnInit, OnDestroy {
 
   user = {
     name: "Hello",
@@ -19,6 +19,9 @@ export class TemplateDrivenComponent implements OnInit {
   }
 
   constructor() { }
+  ngOnDestroy(): void {
+    console.log('TemplateDrivenComponent destroyed');
+  }
 
   ngOnInit(): void {
   }
