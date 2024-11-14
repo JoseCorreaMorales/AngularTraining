@@ -4,16 +4,20 @@ import { RoutingComponent } from './components/routing/routing.component';
 import { RouterModule } from '@angular/router';
 import { RoutingRoutingModule } from './routing-routing.module';
 import { RouteParametersComponent } from './components/route-parameters/route-parameters.component';
+import { AdvancedRoutingComponent } from './components/advanced-routing/advanced-routing.component';
+import { AuthModule } from '../auth/auth.module';
 
 @NgModule({
   declarations: [
     RoutingComponent,
-    RouteParametersComponent
+    RouteParametersComponent,
+    AdvancedRoutingComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    RoutingRoutingModule
+    RoutingRoutingModule,
+    AuthModule
   ],
   exports: [
     RoutingComponent

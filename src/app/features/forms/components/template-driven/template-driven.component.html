@@ -11,7 +11,7 @@
 
 
 <form #form="ngForm" (ngSubmit)="send(form)"
-  class="w-1/2 mx-auto p-5 flex justify-center items-center flex-col gap-9 bg-base-200 rounded-2xl">
+  class="w-[55vw] mx-auto p-5 mb-10 flex justify-center items-center flex-col gap-9 bg-base-200 rounded-2xl">
   <h1 class="text-center text-xl font-bold">My Template-Driven Form</h1>
 
 
@@ -19,7 +19,7 @@
   <label for="Name" class="">
     <input
     name="name" type="text"
-    class="input input-bordered !w-full"
+    class="input input-bordered w-[40vw]"
     placeholder="Name"
     [(ngModel)]="user.name"
     #name="ngModel"
@@ -32,7 +32,7 @@
   <label for="Lastname" class="">
     <input
     name="latsname" type="text"
-    class="input input-bordered w-full"
+    class="input input-bordered w-[40vw]"
     placeholder="Lastname"
     #lastname="ngModel"
     [(ngModel)]="user.lastname"
@@ -44,7 +44,7 @@
   <!-- phonenumber -->
   <label for="Phone" class="">
     <input name="phonenumber" type="number"
-    class="input input-bordered w-full"
+    class="input input-bordered w-[40vw]"
     placeholder="Phone"
     #phonenumber="ngModel"
     [(ngModel)]="user.phonenumber"
@@ -53,7 +53,7 @@
   </label>
 
   <button
-  class="btn btn-active btn-primary w-4/5"
+  class="btn btn-active btn-primary w-3/5"
   type="submit"
   [disabled]="form.invalid">
     Send

@@ -91,11 +91,11 @@ const routeInfo = this.router.snapshot.paramMap.get('helloAngular')&#41;&#32;&#3
 <!-- Sending params -->
 <section class="content-section">
   <h2 class="text-2xl font-semibold">Sending information into the URL</h2>
-  To send data in the URL the route needs to be defined into Router Module with a
+  <p class="my-5">To send data in the URL the route needs to be defined into Router Module with a
   <strong> : </strong> after the given name, for example Path: <strong>'routing/:helloAngular'</strong>,
-  then inject the Router Module with path to navigate next to data to be sended
+  then inject the Router Module with path to navigate next to data to be sended</p>
 
-  <div class="grid h-auto w-3/5  my-6
+  <div class="grid h-auto w-full my-6 sm:w-2/3
      mx-auto flex-grow card bg-secondary rounded-box place-items-center">
 
     <code class="  p-4 rounded-md text-lg flex gap-x-4 w-full overflow-x-auto items-center justify-center">
@@ -114,11 +114,11 @@ this.router.navigate(['/routing', 'helloAngular']);
 <!-- Example query parameters -->
 <section class="content-section">
   <h2 class="text-2xl font-semibold">Optional parameters or query parameters</h2>
-  <p>In Angular, there are <strong>two main ways</strong> to work with Query Params:</p>
+  <p class="my-5  ">In Angular, there are <strong>two main ways</strong> to work with Query Params:</p>
 
   <h3 class="text-xl mt-4 font-medium">1. From a function in the component, using the Router service's navigate method
     to navigate to a route and add query params</h3>
-  <div class="grid h-auto w-3/5  my-6
+  <div class="grid h-auto w-full my-6 sm:w-2/3 mb-14
     mx-auto flex-grow card bg-primary rounded-box place-items-center">
 
     <code class="  p-4 rounded-md text-lg flex gap-x-4 w-full overflow-x-auto items-center justify-center">
@@ -136,7 +136,7 @@ param1: 'value', param2: 'otherValue'
   </div>
   <h3 class="text-xl mt-4 font-medium">2. Also specifying query params directly in the HTML using the routerLink
     directive and the queryParams attribute</h3>
-  <div class="grid h-auto w-3/5  my-6
+  <div class="grid h-auto w-full my-6 sm:w-2/3 mb-14
     mx-auto flex-grow card bg-accent rounded-box place-items-center">
 
     <code class="  p-4 rounded-md text-lg flex gap-x-4 w-full overflow-x-auto items-center justify-center">

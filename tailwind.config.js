@@ -15,7 +15,7 @@ module.exports = {
       'pastel',
       'retro', // first one will be the default theme
       'synthwave',
-      'dracula'
+      'dracula',
     ],
   },
 }
