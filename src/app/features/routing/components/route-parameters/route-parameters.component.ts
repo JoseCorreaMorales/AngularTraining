@@ -20,7 +20,7 @@ interface Product {
 @Component({
   selector: 'route-parameters',
   templateUrl: './route-parameters.component.html',
-  styleUrls: ['./route-parameters.component.css']
+  styleUrls: ['./route-parameters.component.css'],
 })
 export class RouteParametersComponent implements OnInit {
   toastTime: number = 5000
