@@ -33,6 +33,7 @@ import { CounterModule } from './features/counter/counter.module';
     ControlsModule,
     DirectivesModule,
     HomeModule,
+    SharedModule,
     RoutingModule,
     RouterModule,
     BrowserModule,
