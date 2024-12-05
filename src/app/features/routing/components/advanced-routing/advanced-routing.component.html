@@ -58,7 +58,8 @@
         <tbody>
           <tr>
             <th>1</th>
-            <td class="truncate"><strong>CanActivate</strong>: Controls initial access to a route. For example, it can be
+            <td class="truncate"><strong>CanActivate</strong>: Controls initial access to a route. For example, it can
+              be
               used to check if a user is logged in.</td>
           </tr>
           <tr>
@@ -70,7 +71,8 @@
           <tr>
             <th>3</th>
             <td class="truncate">
-              <strong>CanDeactivate</strong>: Allows handling route exits, such as showing a confirmation dialog if there
+              <strong>CanDeactivate</strong>: Allows handling route exits, such as showing a confirmation dialog if
+              there
               are unsaved changes.
             </td>
           </tr>
@@ -85,6 +87,16 @@
       </table>
     </div>
 
-    <app-login></app-login>
+    <div *ngIf="isUserLoggedIn$; else notlogin"
+      class="flex justify-center items-center gap-4 flex-col w-[50vw] h-72 bg-base-200 rounded-2xl">
+      Alredy singin!
+      <button class="btn glass"
+      routerLink="/profile"
+      >Go to profile!</button>
+    </div>
+    <ng-template #notlogin>
+      <app-login></app-login>
+    </ng-template>
+
   </div>
 </section>
