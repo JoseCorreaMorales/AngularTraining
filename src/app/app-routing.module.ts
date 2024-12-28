@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: '', loadChildren: () => import('./features/forms/controls.module').then(m => m.ControlsModule) },
   { path: '', loadChildren: () => import('./features/routing/routing.module').then(m => m.RoutingModule) },
   { path: '', loadChildren: () => import('./features/auth/auth.module').then(m => m.AuthModule) },
+  { path: '', loadChildren: () => import('./features/observable/observable.module').then(m => m.ObservableModule) },
   { path: '**', component: FourOFourComponent }, // 404 route
 ];
 
