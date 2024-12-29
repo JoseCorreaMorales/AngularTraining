@@ -87,12 +87,14 @@
       </table>
     </div>
 
-    <div *ngIf="isUserLoggedIn$; else notlogin"
+    <!-- <div *ngIf="isUserLoggedIn$; else notlogin" -->
+    <div *ngIf="isUserLoggedIn$ | async; else notlogin"
       class="flex justify-center items-center gap-4 flex-col w-[50vw] h-72 bg-base-200 rounded-2xl">
       Alredy singin!
       <button class="btn glass"
       routerLink="/profile"
       >Go to profile!</button>
+      <button class="btn btn-outline btn-error" (click)="logOut()">Log out</button>
     </div>
     <ng-template #notlogin>
       <app-login></app-login>
@@ -100,3 +102,5 @@
 
   </div>
 </section>
+
+

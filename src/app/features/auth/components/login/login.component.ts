@@ -11,8 +11,8 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent implements OnInit {
 
   form = new FormGroup({
-    email: new  FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    username: new  FormControl('', []),/*  [Validators.required, Validators.email] */
+    password: new FormControl('', []),/* [Validators.required, Validators.minLength(6)] */
 
   })
 
@@ -23,9 +23,13 @@ export class LoginComponent implements OnInit {
 
   onLodingSubmit() {
     if (this.form.valid) {
-      const { email, password } = this.form.getRawValue();
-      console.log(email, password);
-      this.authService.logIn();
+      const { username, password } = this.form.getRawValue();
+      console.log('ok', username, password);
+      const credentials = { username, password };
+      this.authService.logIn(credentials).subscribe({
+        next: () => {console.log("USERNAME NEXT: ", username);},
+        error: () => {console.log("USERNAME ERROR: ", username);}
+      })
       this.router.navigate(['/profile']);
     }
   }

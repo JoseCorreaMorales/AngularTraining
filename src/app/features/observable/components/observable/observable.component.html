@@ -1,11 +1,7 @@
 <section class="flex justify-center p-8 bg-base-300">
   <div class="p-6 w-full mt-5">
     <h1 class="text-3xl font-bold leading-10">Observable</h1>
-    <p class="my-4">
-      Observables are a way to manage and react to events that occur over time, such as a user clicking a button, or
-      data arriving from an API. i.e. a function to create a stream of data that is simply a sequence of values ​​over a
-      period of time
-    </p>
+    <p class="my-4"> Observables are a way to manage and react to events that occur over time, such as a user clicking a button, or data arriving from an API. i.e. a function to create a stream of data that is simply a sequence of values ​​over a period of time </p>
     <button class="btn btn-primary mt-4" routerLink="/">Go Home</button>
   </div>
 </section>
@@ -15,43 +11,30 @@
 
   <!-- Basics -->
   <section class="p-1 m-8">
-    <h2 class="text-2xl font-bold mt-5 text-primary-content">What's really is an Observable? </h2>
-    <p> An observable is an object that emits a sequence of values ​​or events over time. That is, it is a kind of data
-      source that generates information and allows you to "listen" to or "watch" that data as it is emitted. </p>
-
-    <p> We can think of an observable as a television channel: once you subscribe to it (like turning on the TV), you
-      can
-      watch the programs (data values) when they are broadcast on that channel.</p>
+    <h2 class="text-2xl font-bold mt-5 text-primary">What's really is an Observable? </h2>
+    <p> An observable is an object that emits a sequence of values or events over time. That is, it is a kind of data source that generates information and allows you to "listen" to or "watch" that data as it is emitted. </p>
+    <p> We can think of an observable as a television channel: once you subscribe to it (like turning on the TV), you can watch the programs (data values) when they are broadcast on that channel.</p>
 
 
     <h3 class="text-xl font-semibold">Characteristics</h3>
     <ol class="list-inside list-disc p-4">
-      <li class="p-2"><span class="text-primary font-semibold">Asynchronous data emission</span>: Values are not sent
-        all at
-        once but are emitted over time. </li>
-      <li class="p-2"><span class="text-secondary-focus font-semibold">Multiple values</span>: An observable can emit
-        multiple values over time, like a data stream.</li>
-      <li class="p-2"><span class="text-secondary font-semibold">Reactivity</span>: An observable allows the
-        application to react to data changes.</li>
+      <li class="p-2"><span class="text-primary font-semibold">Asynchronous data emission</span>: Values are not sent all at once but are emitted over time. </li>
+      <li class="p-2"><span class="text-secondary-focus font-semibold">Multiple values</span>: An observable can emit multiple values over time, like a data stream.</li>
+      <li class="p-2"><span class="text-secondary font-semibold">Reactivity</span>: An observable allows the application to react to data changes.</li>
     </ol>
 
     <h3 class="text-xl font-semibold">Notifications</h3>
     <p>When you subscribe to an observable, it notifies three possible situations:</p>
     <ol class="list-inside list-disc p-4">
-      <li class="p-2"><span class="text-primary font-bold">Next notification</span>: When the observable emits a value
-        or
-        message. It's like when the TV starts broadcasting a show.</li>
-      <li class="p-2"><span class="text-secondary font-bold">Error notification</span>: When something goes wrong and
-        the
-        observable can no longer emit data, it’s like the program having an error and stopping.</li>
-      <li class="p-2"><span class="text-accent font-bold">Complete notification</span>: When the observable has finished
-        emitting data, it's like when the show ends and there are no more episodes.</li>
+      <li class="p-2"><span class="text-primary font-bold">Next notification</span>: When the observable emits a value or message. It's like when the TV starts broadcasting a show.</li>
+      <li class="p-2"><span class="text-secondary font-bold">Error notification</span>: When something goes wrong and the observable can no longer emit data, it’s like the program having an error and stopping.</li>
+      <li class="p-2"><span class="text-accent font-bold">Complete notification</span>: When the observable has finished emitting data, it's like when the show ends and there are no more episodes.</li>
     </ol>
   </section>
 
   <!-- notifications -->
   <section class="p-1 m-8">
-    <h2 class="text-2xl font-bold mt-5 text-primary-content">Notifications</h2>
+    <h2 class="text-2xl font-bold mt-5 text-primary">Notifications</h2>
     <p>They are functions that allow us to combine, filter and transform observables. These operators can be separated
       into two main categories: <strong>creational and pipeable</strong>.</p>
 
@@ -59,38 +42,26 @@
     <p>They are functions that allow us to create observables from scratch. Some of the most common are:</p>
     <ul class="list-inside list-disc p-4">
       <li class="p-2"><span class="text-primary font-bold">of</span>: Creates an observable from a list of values.</li>
-      <li class="p-2"><span class="text-secondary font-bold">from</span>: Creates an observable from an array, promise
-        or
-        iterable object.</li>
-      <li class="p-2"><span class="text-accent font-bold">interval</span>: Creates an observable that emits a sequence
-        of numbers at a specified interval.</li>
+      <li class="p-2"><span class="text-secondary font-bold">from</span>: Creates an observable from an array, promise or iterable object.</li>
+      <li class="p-2"><span class="text-accent font-bold">interval</span>: Creates an observable that emits a sequence of numbers at a specified interval.</li>
     </ul>
 
     <h3 class="text-xl font-semibold">2. Pipeable Operators</h3>
-    <p>They are functions that allow us to transform, filter and combine observables. <strong>These operators are the
-        ones you can chain together using the pipe() method</strong> Some of the most common are:</p>
+    <p>They are functions that allow us to transform, filter and combine observables. <strong>These operators are the ones you can chain together using the pipe() method</strong> Some of the most common are:</p>
     <ul class="list-inside list-disc p-4">
-      <li class="p-2"><span class="text-primary font-bold">map</span>: Transforms the values emitted by an observable.
-      </li>
-      <li class="p-2"><span class="text-accent font-bold">filter</span>: Filters the values emitted by an observable.
-      </li>
+      <li class="p-2"><span class="text-primary font-bold">map</span>: Transforms the values emitted by an observable. </li>
+      <li class="p-2"><span class="text-accent font-bold">filter</span>: Filters the values emitted by an observable. </li>
     </ul>
   </section>
 
   <!-- Subject and Behavior subject -->
 
   <section class="p-1 m-8">
-    <h2 class="text-2xl font-bold mt-5 text-primary-content">Subject and Behavior Subject</h2>
-    <p>Subjects are a special type of observable that allows values to be multicasted to many observers. This means that
-      multiple subscribers can listen to the same subject and receive the same values. There are several types of
-      subjects, but the most common are:</p>
+    <h2 class="text-2xl font-bold mt-5 text-primary">Subject and Behavior Subject</h2>
+    <p>Subjects are a special type of observable that allows values to be multicasted to many observers. This means that multiple subscribers can listen to the same subject and receive the same values. There are several types of subjects, but the most common are:</p>
 
     <h3 class="text-xl font-semibold">1. Subject</h3>
-    <p>A Subject in RxJS is a special kind of observable that allows multiple subscribers and also emits values ​​as if
-      it were
-      an observer. That is, a Subject not only emits values ​​(like an observable), but it can also receive values ​​and
-      emit
-      those values ​to its subscribers.</p>
+    <p>A Subject in RxJS is a special kind of observable that allows multiple subscribers and also emits values ​​as if it were an observer. That is, a Subject not only emits values ​​(like an observable), but it can also receive values ​​and emit those values ​to its subscribers.</p>
 
 
     <div class="bg-base-200 collapse rounded-md">
@@ -101,37 +72,15 @@
       </div>
       <div
         class="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
-        <p>So a Subject is an observable that creates a stream around an observer, which means that every time one of
-          the
-          observer's
-          methods is invoked, it will cause a notification of that same type to be emitted in the string that creates
-          the
-          observable part. Since the observer interface in the subject is public, we can either subscribe to an observer
-          where
-          it
-          would have a repeater function between said observable and the observers that subscribe to the subject, or we
-          could
-          use
-          the subject as a kind of event emitter or broadcast channel by manually calling its next error and complete
-          methods
-          from
-          the code. An important difference with respect to the rest of the observables is that subjects, instead of
-          creating an
-          execution context for each subscription, share the same context among all the observers subscribed to it.</p>
+        <p>So a Subject is an observable that creates a stream around an observer, which means that every time one of the observer's methods is invoked, it will cause a notification of that same type to be emitted in the string that creates the observable part. Since the observer interface in the subject is public, we can either subscribe to an observer where it would have a repeater function between said observable and the observers that subscribe to the subject, or we could use the subject as a kind of event emitter or broadcast channel by manually calling its next error and complete methods from the code. An important difference with respect to the rest of the observables is that subjects, instead of creating an execution context for each subscription, share the same context among all the observers subscribed to it.</p>
       </div>
     </div>
 
 
 
     <h3 class="text-xl font-semibold">2. Behavior Subject</h3>
-    <p>A BehaviorSubject is a special type of Subject that always saves and emits the most recent value to new
-      subscribers.
-      Unlike a normal Subject, which does not emit anything to a new subscriber until it receives a value, a
-      BehaviorSubject
-      always has an initial value and emits it immediately to any new subscribers.</p>
-    <p>BehaviorSubjects are especially useful when you want to have a "shared state" that is always updated and
-      accessible by
-      any subscribing component.</p>
+    <p>A BehaviorSubject is a special type of Subject that always saves and emits the most recent value to new subscribers. Unlike a normal Subject, which does not emit anything to a new subscriber until it receives a value, a BehaviorSubject always has an initial value and emits it immediately to any new subscribers.</p>
+    <p>BehaviorSubjects are especially useful when you want to have a "shared state" that is always updated and accessible by any subscribing component.</p>
 
     <div class="bg-base-200 collapse rounded-md">
       <input type="checkbox" class="peer" />
@@ -141,18 +90,7 @@
       </div>
       <div
         class="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
-        <p>Behavioral Subject implements the concept of
-          current value by storing in memory the last value emitted in the stream, unlike the Subject, in which an
-          observer only
-          receives those notifications that are emitted in the stream from the moment in which it subscribes to the
-          Behavior
-          Subject. When an observer subscribes, the first thing it receives is a next notification with the current
-          value, which
-          allows it to have access to the most up-to-date value since the beginning. This type of subject will be very
-          useful to
-          represent the state of our application since it allows us to save a value as if it were a variable, but
-          without giving
-          up the reactivity of observables.</p>
+        <p>Behavioral Subject implements the concept of current value by storing in memory the last value emitted in the stream, unlike the Subject, in which an observer only receives those notifications that are emitted in the stream from the moment in which it subscribes to the Behavior Subject. When an observer subscribes, the first thing it receives is a next notification with the current value, which allows it to have access to the most up-to-date value since the beginning. This type of subject will be very useful to represent the state of our application since it allows us to save a value as if it were a variable, but without giving up the reactivity of observables.</p>
       </div>
     </div>
 

@@ -14,9 +14,11 @@ export class IsLoggedInGuard implements CanActivate {
     //return this.AuthService.loggedIn || this.router.navigate(['/login']);
   } */
   canActivate(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.authService.loggedIn$.pipe(
-      map((loggedIn) => loggedIn ? true : this.router.createUrlTree(['/login']))
-    );
+    const isAuthenticated = !!this.authService.getAuthToken;
+    if (!isAuthenticated) {
+      return this.router.createUrlTree(['/login']);
+    }
+    return true;
   }
 
 }

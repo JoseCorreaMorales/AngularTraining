@@ -2,23 +2,23 @@
  class="w-[50vw] flex justify-center items-center flex-col gap-9 mx-auto p-5  bg-base-200 rounded-2xl">
     <h1 class="text-3xl font-semibold">Login</h1>
 
-    <label for="Email" class="">
+    <label for="username" class="">
       <input
-      name="Email"
-      type="email"
-      placeholder="Email"
-      #emailInput
-      formControlName="email"
+      name="username"
+      type="text"
+      placeholder="username"
+      #usernameInput
+      formControlName="username"
       class="input input-bordered !w-full"
     />
     </label>
 
     <!-- Email errors -->
-      <div *ngIf="form.controls.email.touched && form.controls.email.invalid">
-        <p *ngIf="form.controls.email.hasError('required')" class="font-medium text-red-500 text-xs">
+      <div *ngIf="form.controls.username.touched && form.controls.username.invalid">
+        <p *ngIf="form.controls.username.hasError('required')" class="font-medium text-red-500 text-xs">
             This field is mandatory
           </p>
-          <p *ngIf="form.controls.email.hasError('email')" class="font-medium text-red-500 text-xs">
+          <p *ngIf="form.controls.username.hasError('email')" class="font-medium text-red-500 text-xs">
             This field should be a email
         </p>
     </div>
@@ -35,7 +35,7 @@
       />
     </label>
 
-    <!-- Email errors -->
+    <!-- Password errors -->
     <div *ngIf="form.controls.password.touched && form.controls.password.invalid">
       <p *ngIf="form.controls.password.hasError('required')" class="font-medium text-red-500 text-xs mt-1 ml-1">
             This field is mandatory
@@ -49,5 +49,9 @@
 
     <button class="btn btn-primary">Login</button>
 
+
+    <div>
+      {{form.value | json }}
+    </div>
   </form>
 
