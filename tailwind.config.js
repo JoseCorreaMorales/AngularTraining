@@ -16,6 +16,7 @@ module.exports = {
       'retro', // first one will be the default theme
       'synthwave',
       'dracula',
+      'wireframe',
     ],
   },
 }

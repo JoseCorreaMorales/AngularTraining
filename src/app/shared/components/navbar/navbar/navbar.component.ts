@@ -9,7 +9,7 @@ import { ThemeService } from 'src/app/core/services/theme.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarComponent implements OnInit {
-  themes: Array<string> = ['cupcake', 'pastel', 'retro', 'synthwave', 'dracula']
+  themes: Array<string> = ['cupcake', 'pastel', 'retro', 'synthwave', 'dracula', 'wireframe']
   currentTheme: string = 'default';
 
 
