@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubjectData, ObservableService } from '../../services/observable.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-observable',
@@ -6,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./observable.component.css']
 })
 export class ObservableComponent implements OnInit {
+  data$ : Observable<BehaviorSubjectData>;
 
-  constructor() { }
+  constructor(observableService : ObservableService) { 
+    this.data$ = observableService.sharingObservable;
+
+  }
 
   ngOnInit(): void {
   }

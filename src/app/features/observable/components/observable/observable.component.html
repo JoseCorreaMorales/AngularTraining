@@ -79,6 +79,7 @@
 
 
     <h3 class="text-xl font-semibold">2. Behavior Subject</h3>
+    <p><strong>{{ (data$ | async)?.name }}</strong></p>
     <p>A BehaviorSubject is a special type of Subject that always saves and emits the most recent value to new subscribers. Unlike a normal Subject, which does not emit anything to a new subscriber until it receives a value, a BehaviorSubject always has an initial value and emits it immediately to any new subscribers.</p>
     <p>BehaviorSubjects are especially useful when you want to have a "shared state" that is always updated and accessible by any subscribing component.</p>
 
