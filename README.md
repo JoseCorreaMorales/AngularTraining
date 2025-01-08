@@ -20,9 +20,9 @@ src/
 |   |-- shared/
 |   |   |-- components/
 |   |   |-- directives/
-|   |   |   |-- shared.module.ts
-|   |   |   |-- shared-routing.module.ts
 |   |   |-- pipes/
+|   |   |-- shared.module.ts
+|   |   |-- shared-routing.module.ts
 |   |-- features/
 |   |   |-- feature1/
 |   |   |   |-- components/
