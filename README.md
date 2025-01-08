@@ -9,7 +9,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * **Angular CLI:** v13.1.4
 * **NPM:** v10.7.0
 
-## feature-based 
+## Feature-based Architecture 
 ```
 src/
 |-- app/
@@ -27,21 +27,27 @@ src/
 |   |   |-- feature1/
 |   |   |   |-- components/
 |   |   |   |-- services/
+|   |   |   |-- errors/
 |   |   |   |-- feature1.module.ts
 |   |   |   |-- feature2-routing.module.ts
 |   |   |-- feature2/
 |   |   |   |-- components/
 |   |   |   |-- services/
+|   |   |   |-- errors/
 |   |   |   |-- feature2.module.ts
 |   |   |   |-- feature2-routing.module.ts
 |   |-- models/
+|   |-- MyCustomType.ts
+|   |
 |   |-- app.component.ts
 |   |-- app.module.ts
 |   |-- app-routing.module.ts
 |-- assets/
+|-- |-- icons/
 |-- environments/
 
 ```
+
 ## Commands
 ### Create a routing module
 ```bash
