@@ -9,7 +9,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * **Angular CLI:** v13.1.4
 * **NPM:** v10.7.0
 
-## Feature-based Architecture 
+## scaffolding 
 ```
 src/
 |-- app/
